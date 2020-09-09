@@ -1,0 +1,1128 @@
+cd
+jacob@DESKTOP-F5QD14Q MINGW64 ~
+$ cd Desktop/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop
+$ cd CMSI
+bash: cd: CMSI: No such file or directory
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop
+$ cd CMSI-186_Projects/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ ls
+homework00/  homework01/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ cd homework01/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01
+$ ls
+homework01_eval.txt  music-mashup/  README.md
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01
+$ git clone https://github.com/bjohnson05/cmsi186.git
+Cloning into 'cmsi186'...
+remote: Enumerating objects: 244, done.
+remote: Counting objects: 100% (244/244), done.
+remote: Compressing objects: 100% (216/216), done.
+remote: Total 2309 (delta 138), reused 67 (delta 18), pack-reused 2065
+Receiving objects: 100% (2309/2309), 47.63 MiB | 21.74 MiB/s, done.
+Resolving deltas: 100% (1288/1288), done.
+warning: the following paths have collided (e.g. case-sensitive paths
+on a case-insensitive filesystem) and only one from the same
+colliding group is in the working tree:
+
+  'cmsi186-Spring2019/homework04/dorin/Ball.class'
+  'cmsi186-Spring2019/homework04/dorin/ball.class'
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01
+$ ls
+homework01_eval.txt  music-mashup/  README.md
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01
+$ cd music-mashup/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ ls
+music-mashup/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ ls
+music-mashup/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ cd
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~
+$ cd Desktop/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop
+$ cd CMSI-186_Projects/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ ls
+homework00/  homework01/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ cd homewok01
+bash: cd: homewok01: No such file or directory
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ ls
+homework00/  homework01/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ cd homework01/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01
+$ ls
+homework01_eval.txt  music-mashup/  README.md
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01
+$ cd music-mashup/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ ls
+country/  funk/  hip-hop-rap/  music-mashup/  reggae/  rock/  soul/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ cd country/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ ls
+BobMarley/  NickiMinaj/  OhioPlayers/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ git mv BobMarley/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/
+fatal: not a git repository (or any of the parent directories): .git
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ git mv BobMarley/
+fatal: not a git repository (or any of the parent directories): .git
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ mv BobMarley/
+mv: missing destination file operand after 'BobMarley/'
+Try 'mv --help' for more information.
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ mv BobMarley/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ cd .
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ cd reggae/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae
+$ ls
+BobMarley/  Funkadelic/  GarthBrooks/  Temptations/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae
+$ ls
+BobMarley/  Funkadelic/  GarthBrooks/  Temptations/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae
+$ cd BobMarley/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/BobMarley
+$ ls
+Guns-n-Roses.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/BobMarley
+$ mv Guns-n-Roses.jpg ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk/GunsNRoses/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/BobMarley
+$ ls
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/BobMarley
+$ cd
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~
+$ cd Desktop/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop
+$ cd CMSI-186_Projects/homework01/music-mashup/country/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ ls
+NickiMinaj/  OhioPlayers/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ mv NickiMinaj/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ ls
+OhioPlayers/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ mv OhioPlayers/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ ls
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ cd .
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ ls
+country/  funk/  hip-hop-rap/  music-mashup/  reggae/  rock/  soul/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ cd funk/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk
+$ ls
+AlanisMorissette/  FourTops/  GunsNRoses/  OhioPlayers/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk
+$ mv AlanisMorissette/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk
+$ ls
+FourTops/  GunsNRoses/  OhioPlayers/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk
+$ mv FourTops/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk
+$ ls
+GunsNRoses/  OhioPlayers/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk
+$ mv GunsNRoses/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk
+$ ls
+OhioPlayers/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ ls
+country/  funk/  hip-hop-rap/  reggae/  rock/  soul/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ cd hip-hop-rap/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap
+$ ls
+Aerosmith/  NickiMinaj/  PatsyCline/  SmokeyRobinson/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap
+$ mv Aerosmith/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap
+$ ls
+NickiMinaj/  PatsyCline/  SmokeyRobinson/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap
+$ mv PatsyCline/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap
+$ ls
+NickiMinaj/  SmokeyRobinson/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap
+$ mv SmokeyRobinson/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap
+$ ls
+NickiMinaj/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap
+$ ls
+NickiMinaj/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ cd reggae/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae
+$ ls
+BobMarley/  Funkadelic/  GarthBrooks/  Temptations/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae
+$ mv Funkadelic/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae
+$ ls
+BobMarley/  GarthBrooks/  Temptations/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae
+$ mv Temptations/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae
+$ ls
+BobMarley/  GarthBrooks/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae
+$ mv GarthBrooks/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae
+$ ls
+BobMarley/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ cd rock/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock
+$ ls
+Aerosmith/  AlanisMorissette/  CardiB/  EarthWindAndFire/  GunsNRoses/  PeterTosh/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock
+$ mv CardiB/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock
+$ ls
+Aerosmith/  AlanisMorissette/  EarthWindAndFire/  GunsNRoses/  PeterTosh/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock
+$ mv EarthWindAndFire/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock
+$ ls
+Aerosmith/  AlanisMorissette/  GunsNRoses/  PeterTosh/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock
+$ mv PeterTosh/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock
+$ ls
+Aerosmith/  AlanisMorissette/  GunsNRoses/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ cd soul/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ ls
+DollyParton/  EarthWindAndFire/  FourTops/  JimmyCliff/  JuiceWrld/  SmokeyRobinson/  Temptations/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ mv DollyParton/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ ls
+EarthWindAndFire/  FourTops/  JimmyCliff/  JuiceWrld/  SmokeyRobinson/  Temptations/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ mv JimmyCliff/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ ls
+EarthWindAndFire/  FourTops/  JuiceWrld/  SmokeyRobinson/  Temptations/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ mv JuiceWrld/ ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ ls
+EarthWindAndFire/  FourTops/  SmokeyRobinson/  Temptations/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ ls
+EarthWindAndFire/  FourTops/  SmokeyRobinson/  Temptations/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ cd country/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ ls
+DollyParton/  GarthBrooks/  PatsyCline/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ cd DollyParton/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country/DollyParton
+$ ls
+EarthWindAndFire.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country/DollyParton
+$ mv EarthWindAndFire.jpg ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/EarthWindAndFire/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country/DollyParton
+$ ls
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country/DollyParton
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ ls
+DollyParton/  GarthBrooks/  PatsyCline/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ cd GarthBrooks/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country/GarthBrooks
+$ ls
+OhioPlayers.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country/GarthBrooks
+$ mv OhioPlayers.jpg ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk/OhioPlayers/
+ls
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country/GarthBrooks
+$ ls
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country/GarthBrooks
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ ls
+DollyParton/  GarthBrooks/  PatsyCline/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ cd PatsyCline/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country/PatsyCline
+$ ls
+Funkadelic.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country/PatsyCline
+$ mv Funkadelic.jpg ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk/Funkadelic/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country/PatsyCline
+$ ls
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country/PatsyCline
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ ls
+DollyParton/  GarthBrooks/  PatsyCline/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ cd funk/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk
+$ ls
+Funkadelic/  OhioPlayers/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk
+$ cd Funkadelic/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk/Funkadelic
+$ ls
+Funkadelic.jpg  GarthBrooks.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk/Funkadelic
+$ mv GarthBrooks.jpg ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country/GarthBrooks/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk/Funkadelic
+$ ls
+Funkadelic.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk/Funkadelic
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk
+$ ls
+Funkadelic/  OhioPlayers/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk
+$ cd OhioPlayers/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk/OhioPlayers
+$ ls
+BobMarley.jpg  OhioPlayers.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk/OhioPlayers
+$ mv BobMarley.jpg ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/BobMarley/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk/OhioPlayers
+$ ls
+OhioPlayers.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk/OhioPlayers
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk
+$ ls
+Funkadelic/  OhioPlayers/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/funk
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ cd hip-hop-rap/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap
+$ ls
+CardiB/  JuiceWrld/  NickiMinaj/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap
+$ cd CardiB/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap/CardiB
+$ ls
+JimmyCliff.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap/CardiB
+$ mv JimmyCliff.jpg ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/JimmyCliff/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap/CardiB
+$ ls
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap/CardiB
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap
+$ ls
+CardiB/  JuiceWrld/  NickiMinaj/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap
+$ cd JuiceWrld/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap/JuiceWrld
+$ ls
+PatsyCline.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap/JuiceWrld
+$ mv PatsyCline.jpg ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country/PatsyCline/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap/JuiceWrld
+$ ls
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap/JuiceWrld
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap
+$ ls
+CardiB/  JuiceWrld/  NickiMinaj/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap
+$ cd NickiMinaj/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap/NickiMinaj
+$ ls
+FourTops.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap/NickiMinaj
+$ mv FourTops.jpg ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/FourTops/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap/NickiMinaj
+$ ls
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap/NickiMinaj
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap
+$ ls
+CardiB/  JuiceWrld/  NickiMinaj/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ cd reggae/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae
+$ ls
+BobMarley/  JimmyCliff/  PeterTosh/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae
+$ cd BobMarley/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/BobMarley
+$ ls
+BobMarley.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/BobMarley
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae
+$ cd JimmyCliff/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/JimmyCliff
+$ ls
+aerosmith.jpg  JimmyCliff.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/JimmyCliff
+$ mv aerosmith.jpg ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock/Aerosmith/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/JimmyCliff
+$ ls
+JimmyCliff.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/JimmyCliff
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae
+$ ls
+BobMarley/  JimmyCliff/  PeterTosh/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae
+$ cd PeterTosh/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/PeterTosh
+$ ls
+SmokeyRobinson.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/PeterTosh
+$ mv SmokeyRobinson.jpg ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/SmokeyRobinson/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/PeterTosh
+$ ls
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/PeterTosh
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae
+$ ls
+BobMarley/  JimmyCliff/  PeterTosh/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ cd rock/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock
+$ ls
+Aerosmith/  AlanisMorissette/  GunsNRoses/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock
+$ cd Aerosmith/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock/Aerosmith
+$ ls
+aerosmith.jpg  nicki-minaj_13.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock/Aerosmith
+$ mv nicki-minaj_13.jpg ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap/NickiMinaj/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock/Aerosmith
+$ ls
+aerosmith.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock/Aerosmith
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock
+$ ls
+Aerosmith/  AlanisMorissette/  GunsNRoses/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock
+$ cd AlanisMorissette/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock/AlanisMorissette
+$ ls
+juice-wrld_12.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock/AlanisMorissette
+$ mv juice-wrld_12.jpg ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap/JuiceWrld/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock/AlanisMorissette
+$ ls
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock/AlanisMorissette
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock
+$ ls
+Aerosmith/  AlanisMorissette/  GunsNRoses/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock
+$ cd GunsNRoses/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock/GunsNRoses
+$ ls
+DollyParton.jpg  Guns-n-Roses.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock/GunsNRoses
+$ mv DollyParton.jpg
+mv: missing destination file operand after 'DollyParton.jpg'
+Try 'mv --help' for more information.
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock/GunsNRoses
+$ mv DollyParton.jpg ~/Desktop/CMSI-186_Projects/homework01/music-mashup/country/DollyParton/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock/GunsNRoses
+$ ls
+Guns-n-Roses.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock/GunsNRoses
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock
+$ ls
+Aerosmith/  AlanisMorissette/  GunsNRoses/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup
+$ cd soul/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ ls
+EarthWindAndFire/  FourTops/  SmokeyRobinson/  Temptations/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ cd EarthWindAndFire/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/EarthWindAndFire
+$ ls
+EarthWindAndFire.jpg  Temptations.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/EarthWindAndFire
+$ mv Temptations.jpg ~/Desktop/CMSI-186_Projects/homework01/music-mashup/^C
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/EarthWindAndFire
+$ mv Temptations.jpg ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/Temptations/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/EarthWindAndFire
+$ ls
+EarthWindAndFire.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/EarthWindAndFire
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ ls
+EarthWindAndFire/  FourTops/  SmokeyRobinson/  Temptations/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ cd EarthWindAndFire/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/EarthWindAndFire
+$ ls
+EarthWindAndFire.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/EarthWindAndFire
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ cd FourTops/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/FourTops
+$ ls
+cardi-b_18.jpg  FourTops.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/FourTops
+$ mv cardi-b_18.jpg ~/Desktop/CMSI-186_Projects/homework01/music-mashup/hip-hop-rap/CardiB/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/FourTops
+$ ls
+FourTops.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/FourTops
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ ls
+EarthWindAndFire/  FourTops/  SmokeyRobinson/  Temptations/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ cd SmokeyRobinson/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/SmokeyRobinson
+$ ls
+AlanisMorissette.png  SmokeyRobinson.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/SmokeyRobinson
+$ mv AlanisMorissette.png ~/Desktop/CMSI-186_Projects/homework01/music-mashup/rock/AlanisMorissette/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/SmokeyRobinson
+$ ls
+SmokeyRobinson.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/SmokeyRobinson
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ ls
+EarthWindAndFire/  FourTops/  SmokeyRobinson/  Temptations/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ cd Temptations/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/Temptations
+$ ls
+Beat65ToshCover.jpg  Temptations.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/Temptations
+$ mv Beat65ToshCover.jpg ~/Desktop/CMSI-186_Projects/homework01/music-mashup/reggae/PeterTosh/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/Temptations
+$ ls
+Temptations.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul/Temptations
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ ls
+EarthWindAndFire/  FourTops/  SmokeyRobinson/  Temptations/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01/music-mashup/soul
+$ cd
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~
+$ status
+bash: status: command not found
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~
+$ cd Desktop/CMSI-186_Projects/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ sttus
+bash: sttus: command not found
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ status
+bash: status: command not found
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ cd homework01/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01
+$ status
+bash: status: command not found
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01
+$ cd ..
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ status
+bash: status: command not found
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ ls
+homework00/  homework01/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ git add homework01/
+fatal: not a git repository (or any of the parent directories): .git
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ add homework01/
+bash: add: command not found
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ git add homework01/
+fatal: not a git repository (or any of the parent directories): .git
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ status
+bash: status: command not found
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects
+$ cd homework01/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01
+$ status
+bash: status: command not found
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects/homework01
+$ cd
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~
+$ cd Desktop/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop
+$ cd CS/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CS
+$ cd
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~
+$ cd Desktop/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop
+$ cd CMSI-186_Projects/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ status
+bash: status: command not found
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        homework00/
+        homework01/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ git add homework00/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ git add homework01/
+warning: adding embedded git repository: homework01
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> homework01
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached homework01
+hint:
+hint: See "git help submodule" for more information.
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ git rm --cached homework01
+error: the following file has staged content different from both the
+file and the HEAD:
+    homework01
+(use -f to force removal)
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ -f
+bash: -f: command not found
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   homework00/Greeter.class
+        new file:   homework00/Greeter.java
+        new file:   homework00/HW0_Evals.txt
+        new file:   homework01
+
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ git add homework01/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   homework00/Greeter.class
+        new file:   homework00/Greeter.java
+        new file:   homework00/HW0_Evals.txt
+        new file:   homework01
+
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ git commit -m "Finished Assignment as of 9.9.2020"
+[master (root-commit) 18f773d] Finished Assignment as of 9.9.2020
+ 4 files changed, 72 insertions(+)
+ create mode 100644 homework00/Greeter.class
+ create mode 100644 homework00/Greeter.java
+ create mode 100644 homework00/HW0_Evals.txt
+ create mode 160000 homework01
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ git push https://github.com/jake-griffin-9/CMSI-186_Projects.git
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream https://github.com/jake-griffin-9/CMSI-186_Projects.git master
+
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ git remote set-url origin https://github.com/jake-griffin-9/CMSI-186_Projects.git
+fatal: No such remote 'origin'
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ remote set-url origin https://github.com/jake-griffin-9/CMSI-186_Projects.git
+bash: remote: command not found
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ cd cmsi
+bash: cd: cmsi: No such file or directory
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ ls
+homework00/  homework01/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ mv homework01/ ~/Google\ Drive/LMU_Junior\ Year/Programming\ Lab\ Course/CMSI-186_Projects/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ ls
+homework00/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ ld
+bash: ld: command not found
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ ls
+homework00/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ ls
+homework00/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Desktop/CMSI-186_Projects (master)
+$ cd
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~
+$ cd Google\ Drive/LMU_Junior\ Year/Programming\ Lab\ Course/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Google Drive/LMU_Junior Year/Programming Lab Course
+$ ls
+ Assignments/                         GitEssentialsCheatSheet_CMSI186.pdf   JGriffin_Notetaking_Template.dotx
+ CMSI-186_Projects/                   IntroToGitCommandLine.pdf             MudCards/
+'Fibonacci Sequence + Program.docx'   JavaNutshell.6Ed.pdf                  NoteTaking/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Google Drive/LMU_Junior Year/Programming Lab Course
+$ cd CMSI-186_Projects/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Google Drive/LMU_Junior Year/Programming Lab Course/CMSI-186_Projects (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        homework01/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Google Drive/LMU_Junior Year/Programming Lab Course/CMSI-186_Projects (master)
+$ git add homework01/
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Google Drive/LMU_Junior Year/Programming Lab Course/CMSI-186_Projects (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   homework01/README.md
+        new file:   homework01/homework01_eval.txt
+        new file:   homework01/music-mashup/country/DollyParton/DollyParton.jpg
+        new file:   homework01/music-mashup/country/GarthBrooks/GarthBrooks.jpg
+        new file:   homework01/music-mashup/country/PatsyCline/PatsyCline.jpg
+        new file:   homework01/music-mashup/funk/Funkadelic/Funkadelic.jpg
+        new file:   homework01/music-mashup/funk/OhioPlayers/OhioPlayers.jpg
+        new file:   homework01/music-mashup/hip-hop-rap/CardiB/cardi-b_18.jpg
+        new file:   homework01/music-mashup/hip-hop-rap/JuiceWrld/juice-wrld_12.jpg
+        new file:   homework01/music-mashup/hip-hop-rap/NickiMinaj/nicki-minaj_13.jpg
+        new file:   homework01/music-mashup/reggae/BobMarley/BobMarley.jpg
+        new file:   homework01/music-mashup/reggae/JimmyCliff/JimmyCliff.jpg
+        new file:   homework01/music-mashup/reggae/PeterTosh/Beat65ToshCover.jpg
+        new file:   homework01/music-mashup/rock/Aerosmith/aerosmith.jpg
+        new file:   homework01/music-mashup/rock/AlanisMorissette/AlanisMorissette.png
+        new file:   homework01/music-mashup/rock/GunsNRoses/Guns-n-Roses.jpg
+        new file:   homework01/music-mashup/soul/EarthWindAndFire/EarthWindAndFire.jpg
+        new file:   homework01/music-mashup/soul/FourTops/FourTops.jpg
+        new file:   homework01/music-mashup/soul/SmokeyRobinson/SmokeyRobinson.jpg
+        new file:   homework01/music-mashup/soul/Temptations/Temptations.jpg
+
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Google Drive/LMU_Junior Year/Programming Lab Course/CMSI-186_Projects (master)
+$ git commit -m "Finished Assignment #01 as of 9.9.2020"
+[master 4a55c7e] Finished Assignment #01 as of 9.9.2020
+ 20 files changed, 73 insertions(+)
+ create mode 100644 homework01/README.md
+ create mode 100644 homework01/homework01_eval.txt
+ create mode 100644 homework01/music-mashup/country/DollyParton/DollyParton.jpg
+ create mode 100644 homework01/music-mashup/country/GarthBrooks/GarthBrooks.jpg
+ create mode 100644 homework01/music-mashup/country/PatsyCline/PatsyCline.jpg
+ create mode 100644 homework01/music-mashup/funk/Funkadelic/Funkadelic.jpg
+ create mode 100644 homework01/music-mashup/funk/OhioPlayers/OhioPlayers.jpg
+ create mode 100644 homework01/music-mashup/hip-hop-rap/CardiB/cardi-b_18.jpg
+ create mode 100644 homework01/music-mashup/hip-hop-rap/JuiceWrld/juice-wrld_12.jpg
+ create mode 100644 homework01/music-mashup/hip-hop-rap/NickiMinaj/nicki-minaj_13.jpg
+ create mode 100644 homework01/music-mashup/reggae/BobMarley/BobMarley.jpg
+ create mode 100644 homework01/music-mashup/reggae/JimmyCliff/JimmyCliff.jpg
+ create mode 100644 homework01/music-mashup/reggae/PeterTosh/Beat65ToshCover.jpg
+ create mode 100644 homework01/music-mashup/rock/Aerosmith/aerosmith.jpg
+ create mode 100644 homework01/music-mashup/rock/AlanisMorissette/AlanisMorissette.png
+ create mode 100644 homework01/music-mashup/rock/GunsNRoses/Guns-n-Roses.jpg
+ create mode 100644 homework01/music-mashup/soul/EarthWindAndFire/EarthWindAndFire.jpg
+ create mode 100644 homework01/music-mashup/soul/FourTops/FourTops.jpg
+ create mode 100644 homework01/music-mashup/soul/SmokeyRobinson/SmokeyRobinson.jpg
+ create mode 100644 homework01/music-mashup/soul/Temptations/Temptations.jpg
+
+jacob@DESKTOP-F5QD14Q MINGW64 ~/Google Drive/LMU_Junior Year/Programming Lab Course/CMSI-186_Projects (master)
+$ git push
+Enumerating objects: 49, done.
+Counting objects: 100% (49/49), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (30/30), done.
+Writing objects: 100% (48/48), 1.09 MiB | 1.15 MiB/s, done.
+Total 48 (delta 0), reused 0 (delta 0)
+To https://github.com/jake-griffin-9/CMSI-186_Projects.git
+   3ea79b4..4a55c7e  master -> master
