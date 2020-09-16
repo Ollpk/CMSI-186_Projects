@@ -1,0 +1,36 @@
+
+Evaluation for homework01: music mashup
+
+============================================
+
+Straighten out the pictures into the correct artist subdirectories,
+then straighten out the artist subdirectories into the "proper"
+genre subdirectories.
+
+Genre subdirectories are based on your own opinion of what genre the
+artist belongs with.  Although my solution involves a 1-to-1 matching
+of an artist with a genre, you are welcome to add them into whatever
+multiple categories you choose.
+
+You must also include a file that contains the commands you used on the
+command line.  The commands will most likely be the common ones like
+"move" or "mv", "copy" or "cp", "mkdir", "rmdir", and "del" or "rm", but
+you may have many others as well.
+
+Point totals are as follows:
+
+command file submitted  :  1 point
+reorganized hierarchy   :  5 points
+
+Total 6 out of 6 = 100% which is an A-plus
+
+Your score:
+Total 6 out of 6 = 100% which is an A-plus
+
+
+Explicit comments on the exercise:
+----------------------------------
+
+
+Nice work!
+
