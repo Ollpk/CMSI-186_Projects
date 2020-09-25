@@ -1,0 +1,52 @@
+
+Evaluation for homework 02: PiSolver
+
+PiSolver.java program
+   Includes running automated PiSolver tests
+============================================
+
+The PiSolver.java class must exist.  There needs to be a constructor that
+makes a call to "super()".  There must be a "main()" method that runs the
+simluation of the number of darts which are obtained from the command
+line argument.  If no argument is given on the command line, there should
+be an error message or usage message generated before the program quits.
+For this program, error checking of the argument number is not required.
+
+There must be a loop which executes the number of times that have been
+given from the command line argument.  Either in the loop or in a separate
+method [e.g. "dartThrow()"] the value of the hypotenuse of the triangle
+formed from the X and Y values calculated for each throw must be calculated
+and used to determine if the dart is inside or outside the circle.  There
+are ten tests run which each count one point
+
+
+A total of one point each for the following, except where noted:
+
+PiSolver.java compiles  : works            -  1 point
+constructor()           : works            -  1 point
+inputHandling           : works            -  0.5 point
+calculation()           : works            -  1 point
+tests correct (10 pts)  : passes all tests - 10 points
+One file in repo        : one present      -  1 point
+Coding Style            : indenting, names -  1 point
+
+Total possible 16 out of 16 = 100% which is an A-plus
+
+Your score:
+Your total 15.5 out of 16 = 96.88% which is an A
+
+
+Explicit comments on the exercise:
+----------------------------------
+Excellent job on this assignment!
+
+One thing to note: although not a "requirement", the convention is to have
+the "main()" method be the last thing in the source file.
+
+Good use of making a separate method to do the calculation!
+
+You DO have the handling and error checking for the command line argument,
+but you DON'T have the default value of 1000 darts if it's missing.  Good
+catch on the negative numbers, though!
+
+Nice work!
