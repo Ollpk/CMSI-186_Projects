@@ -1,0 +1,311 @@
+Hello world from the Die class...
+TESTING THE DIE CLASS: TEST CONSTRUCTOR FOR INVALID NUMBERS OF SIDES:
+   Too few sides requested to constructor....
+   Too few sides requested to constructor....
+   Too few sides requested to constructor....
+   Too few sides requested to constructor....
+TESTING THE DIE CLASS: TESTS ON 8-SIDED DIE:
+   roll() test for 8 sided die: 
+   You rolled a 6
+   You rolled a 5
+   You rolled a 6
+   You rolled a 6
+   You rolled a 5
+   Current value is: [5]
+TESTING THE DIE CLASS: TEST CONSTRUCTOR FOR INVALID NUMBERS OF SIDES:
+   Too few sides requested to constructor....
+   Too few sides requested to constructor....
+   Too few sides requested to constructor....
+   Too few sides requested to constructor....
+TESTING THE DICESET CLASS: TEST CONSTRUCTOR FOR 3 SIX-SIDED DICE:
+  DiceSet: 3 dice, six sided - ds36:
+      initialized ds36 contents             : [4][5][6]
+      after collective roll ds36 contents   : [4][6][6]
+      after individual roll(2) ds36 contents: [4][6][5]
+      sum of dice values is: 15
+   Re-rolling all dice
+      after collective roll ds36 contents   : [5][6][5]
+      after individual roll(2) ds36 contents: [5][6][5]
+      sum of dice values is                 : 16
+   Test of getIndividual(): 
+      value of die at index 0: 5
+      value of die at index 1: 6
+      value of die at index 2: 5
+TESTING THE DIE CLASS: TEST CONSTRUCTOR FOR INVALID NUMBERS OF SIDES:
+   Too few sides requested to constructor....
+   Too few sides requested to constructor....
+   Too few sides requested to constructor....
+   Too few sides requested to constructor....
+TESTING THE DIE CLASS: TESTS ON 4-SIDED DIE:
+   roll() test for 4 sided die: 
+   You rolled a 4
+   You rolled a 4
+   You rolled a 4
+   You rolled a 4
+   You rolled a 4
+   Current value is: [4]
+TESTING THE DIE CLASS: TESTS ON 5-SIDED DIE:
+   roll() test for 5 sided die: 
+   You rolled a 5
+   You rolled a 5
+   You rolled a 5
+   You rolled a 5
+   You rolled a 4
+   Current value is: [4]
+TESTING THE DIE CLASS: TESTS ON 6-SIDED DIE:
+   roll() test for 6 sided die: 
+   You rolled a 5
+   You rolled a 6
+   You rolled a 5
+   You rolled a 6
+   You rolled a 6
+   Current value is: [6]
+TESTING THE DIE CLASS: TESTS ON 7-SIDED DIE:
+   roll() test for 7 sided die: 
+   You rolled a 6
+   You rolled a 7
+   You rolled a 7
+   You rolled a 5
+   You rolled a 6
+   Current value is: [6]
+TESTING THE DIE CLASS: TESTS ON 8-SIDED DIE:
+   roll() test for 8 sided die: 
+   You rolled a 6
+   You rolled a 4
+   You rolled a 8
+   You rolled a 7
+   You rolled a 8
+   Current value is: [8]
+TESTING THE DIE CLASS: TESTS ON 11-SIDED DIE USING NEW SIDE COUNT:
+   Rolling with new side count -- 
+      You rolled a 11
+      You rolled a 5
+      You rolled a 6
+      You rolled a 7
+      You rolled a 11
+TESTING THE DIE CLASS: TESTS ON 17-SIDED DIE USING NEW SIDE COUNT:
+   Rolling with new side count -- 
+      You rolled a 16
+      current value is: 16
+TESTING THE DIE CLASS: TESTS ON 111-SIDED DIE USING NEW SIDE COUNT:
+   Rolling with new side count -- 
+      You rolled a 10
+      current value is: 10
+......End of Die Class Testing.....
+
+
+TESTING THE DICESET CLASS: TEST CONSTRUCTOR FOR 3 SIX-SIDED DICE:
+  DiceSet: 3 dice, six sided - ds36:
+      initialized ds36 contents             : [5][4][4]
+      after collective roll ds36 contents   : [6][4][5]
+      after individual roll(2) ds36 contents: [6][4][4]
+      sum of dice values is: 14
+   Re-rolling all dice
+      after collective roll ds36 contents   : [5][4][6]
+      after individual roll(2) ds36 contents: [5][4][4]
+      sum of dice values is                 : 13
+   Test of getIndividual(): 
+      value of die #1 (index 0): 4
+      value of die #2 (index 1): 4
+TESTING THE DICESET CLASS: TEST CONSTRUCTOR FOR 6 NINE-SIDED DICE:
+   DiceSet: 6 dice, nine sided - ds69:
+      initialized ds36 contents             : [6][9][5][5][4][6]
+      after collective roll ds69 contents   : [4][5][5][8][8][5]
+      after individual roll(2) ds69 contents: [4][5][5][8][8][5]
+      sum of dice values is                 : 35
+   Re-rolling all dice
+      after collective roll ds69 contents   : [7][5][8][4][9][8]
+      after individual roll(3) ds69 contents: [7][5][8][7][9][8]
+      sum of dice values is                 : 44
+   Test of getIndividual(): 
+      value of die #1 (index 0): 5
+      value of die #2 (index 1): 8
+      value of die #3 (index 2): 7
+      value of die #4 (index 3): 9
+      value of die #5 (index 4): 8
+TESTING THE DICESET CLASS: TEST CONSTRUCTOR FOR 9 SEVENTEEN-SIDED DICE:
+   DiceSet: 9 dice, 17 sided - ds917:
+      initialized ds36 contents              : [5][9][13][16][10][17][7][11][15]
+      after collective roll ds917 contents   : [7][16][17][14][5][13][8][15][15]
+      after individual roll(6) ds917 contents: [7][16][17][14][5][13][5][15][15]
+      sum of dice values is                  : 107
+   Re-rolling all dice
+      after collective roll ds917 contents   : [13][8][9][13][11][9][4][8][5]
+      after individual roll(8) ds69 contents : [13][8][9][13][11][9][4][8][9]
+      sum of dice values is                  : 84
+   Test of getIndividual(): 
+      value of die #1 (index 0): 8
+      value of die #2 (index 1): 9
+      value of die #3 (index 2): 13
+      value of die #4 (index 3): 11
+      value of die #5 (index 4): 9
+      value of die #6 (index 5): 4
+      value of die #7 (index 6): 8
+      value of die #8 (index 7): 9
+TESTING THE DICESET CLASS: TEST 'isIdentical()' FOR 9 SEVENTEEN-SIDED DICE:
+   Test of isIndentical(): 
+      Test of ds917 against ds69   : false
+      Test of ds917 against itself : true
+TESTING THE DICESET CLASS: TEST 'isIdentical()' FOR NEW SET OF 9 SEVENTEEN-SIDED DICE:
+   DiceSet ds917 contents       : [16][11][15][15][13][11][9][13][9]
+      New DiceSet ds2_917 contents : [15][11][7][17][14][15][10][13][13]
+      Test of ds917 against ds2_917: true
+......End of DiceSet Class Testing.....
+
+
+
+   Welcome to the High Roll Game!!
+
+
+   Press '1' to roll all the dice 
+
+
+   Press '2' and specify which die by order for in order to roll a single die
+
+
+   Press '3' to calculate the score for this set
+
+
+   Press '4' to Save this Score as High Score
+
+
+   Press '5' to Display the High Score
+
+     Press the 'q' key to quit the program.
+prompt >>   You typed: 1
+ You have rolled your dice and here are your dice values: [5][6][5][5][4]
+prompt >>   You typed: 1
+ You have rolled your dice and here are your dice values: [4][4][6][4][4]
+prompt >>   You typed: 1
+ You have rolled your dice and here are your dice values: [4][4][6][5][6]
+prompt >>   You typed: 2 3
+You entered 3 and your value of that dice after having rolled it is: 4
+prompt >>   You typed: 2 4
+You entered 4 and your value of that dice after having rolled it is: 6
+prompt >>   You typed: 2 2
+You entered 2 and your value of that dice after having rolled it is: 6
+prompt >>   You typed: 3
+Current Score Calculated For this Set: 24
+prompt >>   You typed: 4
+Confirmed: You have saved your roll total of 24 as your highscore.
+prompt >>   You typed: 5
+Your current high score is this: 24
+prompt >>   You typed: 1
+ You have rolled your dice and here are your dice values: [4][5][6][4][5]
+prompt >>   You typed: 1
+ You have rolled your dice and here are your dice values: [5][6][5][6][6]
+prompt >>   You typed: 2 4
+You entered 4 and your value of that dice after having rolled it is: 4
+prompt >>   You typed: 2 0
+You entered 0 and your value of that dice after having rolled it is: 4
+prompt >>   You typed: 3
+Current Score Calculated For this Set: 25
+prompt >>   You typed: 4
+Confirmed: You have saved your roll total of 25 as your highscore.
+prompt >>   You typed: 5
+Your current high score is this: 25
+prompt >>   You typed: q
+
+   Welcome to the High Roll Game!!
+
+
+   Press '1' to roll all the dice 
+
+
+   Press '2' and specify which die by order for in order to roll a single die
+
+
+   Press '3' to calculate the score for this set
+
+
+   Press '4' to Save this Score as High Score
+
+
+   Press '5' to Display the High Score
+
+     Press the 'q' key to quit the program.
+prompt >>   You typed: 1
+ You have rolled your dice and here are your dice values: [15][12][13][11][5][6][8][10][15][8][16]
+prompt >>   You typed: 1
+ You have rolled your dice and here are your dice values: [12][16][6][4][14][12][13][6][13][6][15]
+prompt >>   You typed: 1
+ You have rolled your dice and here are your dice values: [15][16][14][9][14][11][12][5][4][11][16]
+prompt >>   You typed: 2 10
+You entered 10 and your value of that dice after having rolled it is: 13
+prompt >>   You typed: 2 0
+You entered 0 and your value of that dice after having rolled it is: 17
+prompt >>   You typed: 2 7
+You entered 7 and your value of that dice after having rolled it is: 6
+prompt >>   You typed: 3
+Current Score Calculated For this Set: 127
+prompt >>   You typed: 4
+Confirmed: You have saved your roll total of 127 as your highscore.
+prompt >>   You typed: 5
+Your current high score is this: 127
+prompt >>   You typed: 1
+ You have rolled your dice and here are your dice values: [11][5][6][16][10][6][13][16][8][16][5]
+prompt >>   You typed: 1
+ You have rolled your dice and here are your dice values: [14][9][8][6][6][11][5][10][16][7][15]
+prompt >>   You typed: 2 5
+You entered 5 and your value of that dice after having rolled it is: 4
+prompt >>   You typed: 2 3
+You entered 3 and your value of that dice after having rolled it is: 13
+prompt >>   You typed: 3
+Current Score Calculated For this Set: 107
+prompt >>   You typed: 4
+Confirmed: You have saved your roll total of 107 as your highscore.
+prompt >>   You typed: 5
+Your current high score is this: 107
+prompt >>   You typed: q
+
+   Welcome to the High Roll Game!!
+
+
+   Press '1' to roll all the dice 
+
+
+   Press '2' and specify which die by order for in order to roll a single die
+
+
+   Press '3' to calculate the score for this set
+
+
+   Press '4' to Save this Score as High Score
+
+
+   Press '5' to Display the High Score
+
+     Press the 'q' key to quit the program.
+prompt >>   You typed: 1
+ You have rolled your dice and here are your dice values: [4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4]
+prompt >>   You typed: 1
+ You have rolled your dice and here are your dice values: [4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4]
+prompt >>   You typed: 1
+ You have rolled your dice and here are your dice values: [4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4]
+prompt >>   You typed: 2 28
+You entered 28 and your value of that dice after having rolled it is: 4
+prompt >>   You typed: 2 0
+You entered 0 and your value of that dice after having rolled it is: 4
+prompt >>   You typed: 2 17
+You entered 17 and your value of that dice after having rolled it is: 4
+prompt >>   You typed: 3
+Current Score Calculated For this Set: 116
+prompt >>   You typed: 4
+Confirmed: You have saved your roll total of 116 as your highscore.
+prompt >>   You typed: 5
+Your current high score is this: 116
+prompt >>   You typed: 1
+ You have rolled your dice and here are your dice values: [4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4]
+prompt >>   You typed: 1
+ You have rolled your dice and here are your dice values: [4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4][4]
+prompt >>   You typed: 2 19
+You entered 19 and your value of that dice after having rolled it is: 4
+prompt >>   You typed: 2 23
+You entered 23 and your value of that dice after having rolled it is: 4
+prompt >>   You typed: 3
+Current Score Calculated For this Set: 116
+prompt >>   You typed: 4
+Confirmed: You have saved your roll total of 116 as your highscore.
+prompt >>   You typed: 5
+Your current high score is this: 116
+prompt >>   You typed: q

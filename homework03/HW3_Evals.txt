@@ -1,0 +1,120 @@
+
+Evaluation for homework 03: Dice Game
+
+Die, DiceSet, and HighRoll Program
+   Includes running DieAndDiceSetTestHarness
+   Includes running automated HighRoll tests
+============================================
+
+The Die.java class must exist.  It needs to have a constructor that
+takes one argument for the number of sides for the die object.  There
+must be some sort of "roll()" method.  There must be a "getValue()"
+method that returns the current value of the die.  There moust be two
+"toString()" methods, one static [class] method and one instance method.
+The static method must take a Die object as its argument.  There must be
+a main method, which has been provided, and it must have at least one
+test of the Die class in it, but preferably more [like 10].
+
+The DiceSet.java class must exist.  There needs to be a constructor that
+takes the number of dice and the number of sides as arguments.  There
+must be a "sum()" method that returns the integer sum of all the dice in
+the set, as well as a "roll()" method to roll all the dice in the set.
+A separate "rollIndividual()" method must exist, taking one argument that
+is the index of the Die object to roll.  There must be a "getIndividual()"
+method to get the value of a single Die object from the set.  There needs
+to be both a class method "toString()" which takes an argument which is
+another DiceSet, and an instance method "toString()" which has no argument.
+There must be a method "isIdentical()" which takes an argument which is
+another DiceSet and returns a boolean based on whether the two sets are
+considered identical.  It is your choice as to how "deep" to go when you
+make the comparison.  There must be a "main()" method, which is provided
+to you, but you must add at least two tests into it.
+
+The HighRoll.java class must exist.  There needs to be a constructor for
+the class that initializes the game.  You must determine the number of
+dice and the number of sides from the command line, and you must check
+that the input is appropriate.  Any incorrect inputs must cause the
+program to output an error message before ending the program.  There must
+be a TUI menu that is displayed in every iteration of the program loop,
+and which must have the six selections as stated in class and on the web
+page program specification.  There are two points total [1 point for
+each] awarded for argument checking, which covers:
+
+   - right number of arguments
+   - arguments are of correct type after conversion [no letters]
+
+Testing includes the 17 test sections in the provided test harness called
+"DieAndDiceSetTestHarness.java" which will be run to verify the methods
+all work properly and will be worth a total of 5 points.  The input to
+the TUI menu must consist of the numbers of the selections, except for
+the last selection which should be a 'q' for 'quit'.  The batch/shell
+script file used for testing will be run on the HighRoll game and there
+are 4 points awarded, one for each test.  Output from all testing will
+thus be captured to a "testresults.txt" file which will be uploaded to
+your repo as part of evaluation for the assignment.
+
+There must be three files in your repo: Die.java, DiceSet.java, and the
+HighRoll.java files.
+
+
+A total of one point each for the following, except where noted:
+
+class Die         : Exists, coding style acceptable   - 1 point
+constructor       : works                             - 1 point
+roll              : works                             - 1 point
+getValue          : works                             - 1 point
+instan. toString  : works                             - 1 point
+class toString    : works                             - 1 point
+main for testing  : Exists, with some tests in it     - 1 point
+
+class DiceSet     : Exists, coding style acceptable   - 1 point
+constructor       : works                             - 1 point
+sum               : works                             - 1 point
+roll              : works                             - 1 point
+rollIndividual    : works                             - 1 point
+getIndividual     : works                             - 1 point
+instan. toString  : works                             - 1 point
+class toString    : works                             - 1 point
+isIdentical       : works                             - 1 point
+main for testing  : Exists, with some tests in it     - 1 point
+
+class HighRoll    : Exists, coding style acceptable   - 1 point
+TUI:              : works, all options present        - 1 point
+option 1 roll all : works                             - 1 point
+option 2 roll one : works                             - 1 point
+option 3 sum      : works                             - 1 point
+option 4 save     : works                             - 1 point
+option 5 display  : works                             - 1 point
+option 6 quit     : works                             - 1 point
+
+Files in Git      : all three present                 - 3 points
+Test Harness      : passes all evaluation tests       - 5 points
+HighRoll          : passes all evaluation tests       - 4 points
+
+Total 37 out of 37 = 100% which is an A-plus
+
+Your score:
+Total 37 out of 37 = 100% which is an A-plus
+
+Explicit comments on the exercise:
+----------------------------------
+Nice work on this one, Jake!  Just a couple of notes:
+
+You had your getIndividual take an index that was zero-based, so I adapted
+the test harness to compensate.  One thing to consider would be to have the
+code automatically adjust the input for the zero index and let the user enter
+a "1" for the lowest index when dealing with array-based items.
+
+The second thing is to give your user a little more information, by putting
+out a display of the current dice states after every move.  This wasn't a
+specific requirement, but is the kind of thing you should think about doing
+so I left it to each of you to decide on your own.
+
+Finally, when you select to roll a single die, it is not obvious to the user
+that the second parameter is needed when it is not asked for.  The program
+actually throws an exception which is a little unsettling to users; it might
+be worth considering catching the exception and displaying a message to the
+user so a second chance is provided.
+
+Other than that, excellent!!  Keep up the good work!
+
