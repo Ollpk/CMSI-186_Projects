@@ -34,6 +34,7 @@ public class SoccerSim {
      */
 
     public SoccerSim() {
+        this.c = new Clock();
 
     }
 
@@ -136,9 +137,14 @@ public class SoccerSim {
      *
      */
     public void simUpdate() {
+
         for (int i = 0; i < soccerBalls.length; i++) {
-            soccerBalls[i].move(this.timeSlice);
-            soccerBalls[i].setBallOutOfBounds(fieldSizes[0], fieldSizes[1]);
+            if (soccerBalls[i].checkIfOutBounds(DEFAULT_FIELD_WIDTH, DEFAULT_FIELD_HEIGHT)) {
+                soccerBalls[i].setBallOutOfBounds(DEFAULT_FIELD_WIDTH, DEFAULT_FIELD_HEIGHT);
+
+            } else {
+                soccerBalls[i].move(this.timeSlice);
+            }
 
         }
     }
@@ -199,6 +205,7 @@ public class SoccerSim {
     public static void main(String args[]) {
         System.out.println("\n  Hello, world, from the SoccerSim program!");
         SoccerSim ss = new SoccerSim();
+
         try {
             ss.validateArgsAndSetupSim(args);
         } catch (NumberFormatException nfe) {

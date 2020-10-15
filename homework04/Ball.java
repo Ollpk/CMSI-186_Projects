@@ -33,6 +33,14 @@ public class Ball {
 
     }
 
+    public boolean checkIfOutBounds(double fieldwidth, double fieldHeight) {
+        if (this.centerLocation[0] > fieldwidth || this.centerLocation[1] > fieldHeight) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     /**
      * method to fetch the current speed of the ball
      * 
@@ -59,13 +67,11 @@ public class Ball {
      *         defined as speed <= 1.0 inch/second
      */
     public boolean isStillMoving() {
-        double speed = Math.sqrt(Math.pow(currentSpeed[0], 2) + Math.pow(currentSpeed[1], 2)) / 12; // divide by 12
-                                                                                                    // because its 12
-                                                                                                    // inches per foot
-                                                                                                    // and we have found
-                                                                                                    // the speed in
-                                                                                                    // feet.
-        if (speed <= 1.0) {
+        double xInchSpeed = this.currentSpeed[0] / 12;
+        double yInchSpeed = this.currentSpeed[1] / 12;
+
+        if (xInchSpeed < 1 || yInchSpeed < 1) {
+
             return false;
 
         } else {
