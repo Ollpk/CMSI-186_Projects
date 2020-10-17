@@ -1,0 +1,527 @@
+.                                       
+.                                       
+======================================  
+... Testing Ball class ...              
+======================================  
+
+   Testing the Ball class................
+Ball b1: Ball Location X: 10.00 | Ball Location Y: 50.00  | Ball Speed X: 2.00 | Ball Speed Y: 6.00
+Ball b2: Ball Location X: 20.00 | Ball Location Y: 60.00  | Ball Speed X: 3.00 | Ball Speed Y: 7.00
+Ball b3: Ball Location X: 30.00 | Ball Location Y: 70.00  | Ball Speed X: 4.00 | Ball Speed Y: 8.00
+Ball b4: Ball Location X: 40.00 | Ball Location Y: 80.00  | Ball Speed X: 5.00 | Ball Speed Y: 9.00
+
+Ball b1: Ball Location X: 10.02 | Ball Location Y: 50.06  | Ball Speed X: .02 | Ball Speed Y: .06
+Ball b2: Ball Location X: 20.03 | Ball Location Y: 60.07  | Ball Speed X: .03 | Ball Speed Y: .07
+Ball b3: Ball Location X: 30.04 | Ball Location Y: 70.08  | Ball Speed X: .04 | Ball Speed Y: .08
+Ball b4: Ball Location X: 40.05 | Ball Location Y: 80.09  | Ball Speed X: .05 | Ball Speed Y: .09
+
+Ball b1: Ball Location X: 10.02 | Ball Location Y: 50.06  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball b2: Ball Location X: 20.03 | Ball Location Y: 60.07  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball b3: Ball Location X: 30.04 | Ball Location Y: 70.08  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball b4: Ball Location X: 40.05 | Ball Location Y: 80.09  | Ball Speed X: .00 | Ball Speed Y: .00
+
+Ball b1: Ball Location X: 10.02 | Ball Location Y: 50.06  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball b2: Ball Location X: 20.03 | Ball Location Y: 60.07  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball b3: Ball Location X: 30.04 | Ball Location Y: 70.08  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball b4: Ball Location X: 40.05 | Ball Location Y: 80.09  | Ball Speed X: .00 | Ball Speed Y: .00
+
+Ball b1: Ball Location X: 35.00 | Ball Location Y: 35.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball b2: Ball Location X: 20.03 | Ball Location Y: 60.07  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball b3: Ball Location X: 30.04 | Ball Location Y: 70.08  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball b4: Ball Location X: 40.05 | Ball Location Y: 80.09  | Ball Speed X: .00 | Ball Speed Y: .00
+.                                       
+.                                       
+.                                       
+.                                       
+======================================  
+... Testing Clock class ...                
+======================================  
+
+CLOCK CLASS TESTER PROGRAM
+--------------------------
+
+  Creating a new clock: 
+    New clock created:    0.0 hours, 0.0 minutes, 0.0000 seconds
+
+    Testing validateAngleArg()....
+      sending '  0 degrees', expecting double value   0.0 - got   0.0
+      sending ' 30 degrees', expecting double value  30.0 - got  30.0
+      sending ' 60 degrees', expecting double value  60.0 - got  60.0
+      sending ' 90 degrees', expecting double value  90.0 - got  90.0
+      sending '120 degrees', expecting double value 120.0 - got 120.0
+      sending '150 degrees', expecting double value 150.0 - got 150.0
+      sending '180 degrees', expecting double value 180.0 - got 180.0
+      sending '270 degrees', expecting double value 270.0 - got 270.0
+      sending '360 degrees', expecting double value 360.0 - Exception thrown:
+	 java.lang.IllegalArgumentException:  [degree value out of range]
+      sending '-10 degrees', expecting INVALID_ARGUMENT_VALUE - Exception thrown:
+	 java.lang.IllegalArgumentException:  [degree value out of range]
+      sending 'ABC degrees', expecting NumberFormatException - Exception thrown:
+	 java.lang.NumberFormatException:  [degree value not a number]
+      sending '390 degrees', expecting double value 390.0 - Exception thrown:
+	 java.lang.IllegalArgumentException:  [degree value out of range]
+
+    Testing validateTimeSliceArg()....
+      sending '   0.0 seconds', expecting INVALID_ARGUMENT_VALUE - Exception thrown:
+	 java.lang.IllegalArgumentException:  [time slice value out of range] 
+      sending '  10.0 seconds', expecting double value   10.0 - got   10.0
+      sending '  30.0 seconds', expecting double value   30.0 - got   30.0
+      sending '   ABC seconds', expecting NumberFormatException - Exception thrown:
+	 java.lang.NumberFormatException:  [time slice value not a number]
+      sending '  90.0 seconds', expecting double value   90.0 - got   90.0
+      sending ' 500.0 seconds', expecting double value  500.0 - got  500.0
+      sending '1000.0 seconds', expecting double value 1000.0 - got 1000.0
+      sending '1800.0 seconds', expecting double value 1800.0 - got 1800.0
+      sending '1805.0 seconds', expecting INVALID_ARGUMENT_VALUE - Exception thrown:
+	 java.lang.IllegalArgumentException:  [time slice value out of range] 
+
+    Testing toString()....
+      expecting string with 0.0 for all hours, minutes, and seconds values - got true
+
+    Testing tick(), time slice is 10.0 seconds....
+      expecting string with 0.0 for hours and minutes, and 10.0000 seconds values - got true
+      expecting string with 0.0 for hours and minutes, and 20.0000 seconds values - got true
+      expecting string with 0.0 for hours and minutes, and 30.0000 seconds values - got true
+      expecting string with 0.0 for hours and seconds, and 1.0 minutes values - got true
+      expecting string with 0.0 for hours and seconds, and 2.0 minutes values - got true
+    Continue testing tick(), time slice is 100.0 seconds....
+      expecting string with 0.0 for hours, 3.0 minutes, and 40.0000 seconds values - got true
+      expecting string with 0.0 for hours, 5.0 minutes, and 20.0000 seconds values - got true
+      expecting string with 0.0 for hours, 7.0 minutes, and 0.0000 seconds values - got true
+      expecting string with 0.0 for hours, 25.0 minutes, and 20.0000 seconds values - got true
+    Continue testing tick(), time slice is 1507.0 seconds....
+      expecting string with 0.0 for hours, 50.0 minutes, and 27.0000 seconds values - got true
+      expecting string with 4.0 for hours, 36.0 minutes, and 30.0000 seconds values - got true
+    Continue testing tick(), time slice is 1789.0 seconds....
+      expecting string with 5.0 for hours, 6.0 minutes, and 19.0000 seconds values - got true
+      expecting string with 6.0 for hours, 5.0 minutes, and 57.0000 seconds values - got true
+    Continue testing tick(), time slice is 0.123 seconds....
+      expecting string with 6.0 for hours, 5.0 minutes, and 57.1230 seconds values - got true
+      expecting string with 6.0 for hours, 5.0 minutes, and 57.3690 seconds values - got true
+      expecting string with 6.0 for hours, 5.0 minutes, and 58.1070 seconds values - got true
+
+    Testing getHourHandAngle() for current time 06:05:57.1070....
+      expecting double angle value of approximately 183.131 - got true
+
+    Testing getMinuteHandAngle() for current time 06:05:57.1070....
+      expecting double angle value of approximately 35.811 - got true
+
+    Testing getHandAngle() for current time 06:05:57.1070....
+      expecting double angle value of approximately 147.321 degrees - got true
+
+    Continue testing getHandAngle(), time slice is 1800.0 seconds, new time....
+        time now is:    6.0 hours, 35.0 minutes, 58.1070 seconds
+        getHourHandAngle returns: 198.14261237999997
+        getMinuteHandAngle returns: 215.81069999999966
+      expecting string with 6.0 for hours, 35.0 minutes, and 58.1070 seconds values - got true
+      expecting double angle value of approximately 17.668 degrees - got true
+        time now is:    7.0 hours, 5.0 minutes, 58.1070 seconds
+        getHourHandAngle returns: 213.15461237999997
+        getMinuteHandAngle returns: 35.810699999999635
+      expecting string with 7.0 for hours, 5.0 minutes, and 58.1070 seconds values - got true
+      expecting double angle value of approximately 177.344 degrees - got true
+        time now is:    7.0 hours, 35.0 minutes, 58.1070 seconds
+        getHourHandAngle returns: 228.16661237999998
+        getMinuteHandAngle returns: 215.81069999999966
+      expecting string with 7.0 for hours, 35.0 minutes, and 58.1070 seconds values - got true
+      expecting double angle value of approximately 12.356 degrees - got true
+        time now is:    10.0 hours, 5.0 minutes, 58.1070 seconds
+        getHourHandAngle returns: 303.22661237999995
+        getMinuteHandAngle returns: 35.810699999999635
+        getHandAngle returns: 92.5840876199997
+      expecting string with 10.0 for hours, 5.0 minutes, and 58.1070 seconds values - got true
+      expecting double angle value of approximately 92.584 degrees - got true
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim no args...        
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+
+  Hello, world, from the SoccerSim program!
+
+  Usage:
+    java SoccerSim <ball-parameters> ... <ball-parameters> [timeslice]
+      where EACH <ball-parameters> field is a 4-tuple of the values:
+            starting-x, starting-y, start-speed-x, start-speed-y
+
+    try running with three soccer balls: <10 10 1 1>, <18 18 -1 -1>, and <311 311 1 1>
+    this should produce a collision between the first two balls in about four iterations.
+
+  Please try again.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim one arg...        
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+
+  Hello, world, from the SoccerSim program!
+
+FIELD SIZE IS 1000.0 by 1000.0 - POLE LOCATION @ 355.0, 355.0
+TIMESLICE VALUE IS: 10.0 seconds - FRICTION COEFFICIENT IS: 0.9
+
+INITIAL REPORT at 00:00:00.0000
+
+PROGRESS REPORT at 00:00:10.0000
+
+All soccer balls have stopped moving, stopping sim......
+NO COLLISION POSSIBLE!
+Simulation required 1 iterations to complete.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim two args...       
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+
+  Hello, world, from the SoccerSim program!
+
+  Usage:
+    java SoccerSim <ball-parameters> ... <ball-parameters> [timeslice]
+      where EACH <ball-parameters> field is a 4-tuple of the values:
+            starting-x, starting-y, start-speed-x, start-speed-y
+
+    try running with three soccer balls: <10 10 1 1>, <18 18 -1 -1>, and <311 311 1 1>
+    this should produce a collision between the first two balls in about four iterations.
+
+  Please try again.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim three args...     
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+
+  Hello, world, from the SoccerSim program!
+
+  Usage:
+    java SoccerSim <ball-parameters> ... <ball-parameters> [timeslice]
+      where EACH <ball-parameters> field is a 4-tuple of the values:
+            starting-x, starting-y, start-speed-x, start-speed-y
+
+    try running with three soccer balls: <10 10 1 1>, <18 18 -1 -1>, and <311 311 1 1>
+    this should produce a collision between the first two balls in about four iterations.
+
+  Please try again.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim six args...       
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+
+  Hello, world, from the SoccerSim program!
+
+  Usage:
+    java SoccerSim <ball-parameters> ... <ball-parameters> [timeslice]
+      where EACH <ball-parameters> field is a 4-tuple of the values:
+            starting-x, starting-y, start-speed-x, start-speed-y
+
+    try running with three soccer balls: <10 10 1 1>, <18 18 -1 -1>, and <311 311 1 1>
+    this should produce a collision between the first two balls in about four iterations.
+
+  Please try again.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim out of bounds...  
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+
+  Hello, world, from the SoccerSim program!
+
+  Usage:
+    java SoccerSim <ball-parameters> ... <ball-parameters> [timeslice]
+      where EACH <ball-parameters> field is a 4-tuple of the values:
+            starting-x, starting-y, start-speed-x, start-speed-y
+
+    try running with three soccer balls: <10 10 1 1>, <18 18 -1 -1>, and <311 311 1 1>
+    this should produce a collision between the first two balls in about four iterations.
+
+  Please try again.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim negative time slice...
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+
+  Hello, world, from the SoccerSim program!
+
+  Usage:
+    java SoccerSim <ball-parameters> ... <ball-parameters> [timeslice]
+      where EACH <ball-parameters> field is a 4-tuple of the values:
+            starting-x, starting-y, start-speed-x, start-speed-y
+
+    try running with three soccer balls: <10 10 1 1>, <18 18 -1 -1>, and <311 311 1 1>
+    this should produce a collision between the first two balls in about four iterations.
+
+  Please try again.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim time slice too large...
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+
+  Hello, world, from the SoccerSim program!
+
+FIELD SIZE IS 1000.0 by 1000.0 - POLE LOCATION @ 355.0, 355.0
+TIMESLICE VALUE IS: 1800.1 seconds - FRICTION COEFFICIENT IS: -17.001
+
+INITIAL REPORT at 00:00:00.0000
+Ball 1:	Ball Location X: 10.00 | Ball Location Y: 10.00  | Ball Speed X: 5.00 | Ball Speed Y: 5.00
+
+PROGRESS REPORT at 00:30:00.1000
+Ball 1:	Ball Location X: 10.00 | Ball Location Y: 10.00  | Ball Speed X: .00 | Ball Speed Y: .00
+
+All soccer balls have stopped moving, stopping sim......
+NO COLLISION POSSIBLE!
+Simulation required 1 iterations to complete.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim time slice value of zero...
+...   Should throw exception that won't show in results 
+...   Or should output a message of some type 
+======================================  
+
+  Hello, world, from the SoccerSim program!
+
+  Usage:
+    java SoccerSim <ball-parameters> ... <ball-parameters> [timeslice]
+      where EACH <ball-parameters> field is a 4-tuple of the values:
+            starting-x, starting-y, start-speed-x, start-speed-y
+
+    try running with three soccer balls: <10 10 1 1>, <18 18 -1 -1>, and <311 311 1 1>
+    this should produce a collision between the first two balls in about four iterations.
+
+  Please try again.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball should come to rest...
+...   Should stop at about 4:42           
+======================================  
+
+  Hello, world, from the SoccerSim program!
+
+FIELD SIZE IS 1000.0 by 1000.0 - POLE LOCATION @ 355.0, 355.0
+TIMESLICE VALUE IS: 1.0 second - FRICTION COEFFICIENT IS: 0.99
+
+INITIAL REPORT at 00:00:00.0000
+Ball 1:	Ball Location X: 10.00 | Ball Location Y: 10.00  | Ball Speed X: 1.00 | Ball Speed Y: 1.00
+
+PROGRESS REPORT at 00:00:01.0000
+Ball 1:	Ball Location X: 10.01 | Ball Location Y: 10.01  | Ball Speed X: .01 | Ball Speed Y: .01
+
+All soccer balls have stopped moving, stopping sim......
+NO COLLISION POSSIBLE!
+Simulation required 1 iterations to complete.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim check for collision...
+...   Should collide at about 5 seconds   
+======================================  
+
+  Hello, world, from the SoccerSim program!
+
+FIELD SIZE IS 1000.0 by 1000.0 - POLE LOCATION @ 355.0, 355.0
+TIMESLICE VALUE IS: 1.0 second - FRICTION COEFFICIENT IS: 0.99
+
+INITIAL REPORT at 00:00:00.0000
+Ball 1:	Ball Location X: 10.00 | Ball Location Y: 10.00  | Ball Speed X: 1.00 | Ball Speed Y: 1.00
+Ball 2:	Ball Location X: 20.00 | Ball Location Y: 20.00  | Ball Speed X: -1.00 | Ball Speed Y: -1.00
+
+PROGRESS REPORT at 00:00:01.0000
+Ball 1:	Ball Location X: 10.01 | Ball Location Y: 10.01  | Ball Speed X: .01 | Ball Speed Y: .01
+Ball 2:	Ball Location X: 20.00 | Ball Location Y: 20.00  | Ball Speed X: .00 | Ball Speed Y: .00
+
+All soccer balls have stopped moving, stopping sim......
+NO COLLISION POSSIBLE!
+Simulation required 1 iterations to complete.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball should go out of bounds...
+...   Speed *should* kick it out quickly  
+======================================  
+
+  Hello, world, from the SoccerSim program!
+
+FIELD SIZE IS 1000.0 by 1000.0 - POLE LOCATION @ 355.0, 355.0
+TIMESLICE VALUE IS: 1.0 second - FRICTION COEFFICIENT IS: 0.99
+
+INITIAL REPORT at 00:00:00.0000
+Ball 1:	Ball Location X: 10.00 | Ball Location Y: 10.00  | Ball Speed X: 1000.00 | Ball Speed Y: 1000.00
+
+PROGRESS REPORT at 00:00:01.0000
+Ball 1:	Ball Location X: 20.00 | Ball Location Y: 20.00  | Ball Speed X: 10.00 | Ball Speed Y: 10.00
+
+All soccer balls have stopped moving, stopping sim......
+NO COLLISION POSSIBLE!
+Simulation required 1 iterations to complete.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball set six balls subsecond time slice...
+...   Should collide Ball 1 and 4 in less than 1 sec  
+======================================  
+
+  Hello, world, from the SoccerSim program!
+
+FIELD SIZE IS 1000.0 by 1000.0 - POLE LOCATION @ 355.0, 355.0
+TIMESLICE VALUE IS: 0.1 second - FRICTION COEFFICIENT IS: 0.999
+
+INITIAL REPORT at 00:00:00.0000
+Ball 1:	Ball Location X: 200.00 | Ball Location Y: 200.00  | Ball Speed X: 10.00 | Ball Speed Y: 10.00
+Ball 2:	Ball Location X: 100.00 | Ball Location Y: 100.00  | Ball Speed X: -100.00 | Ball Speed Y: -100.00
+Ball 3:	Ball Location X: 150.00 | Ball Location Y: 150.00  | Ball Speed X: 200.00 | Ball Speed Y: 200.00
+Ball 4:	Ball Location X: 175.00 | Ball Location Y: 175.00  | Ball Speed X: -110.00 | Ball Speed Y: -110.00
+Ball 5:	Ball Location X: 20.00 | Ball Location Y: 20.00  | Ball Speed X: 1.00 | Ball Speed Y: 1.00
+Ball 6:	Ball Location X: 50.00 | Ball Location Y: 50.00  | Ball Speed X: -5.00 | Ball Speed Y: -5.00
+
+PROGRESS REPORT at 00:00:00.1000
+Ball 1:	Ball Location X: 200.63 | Ball Location Y: 200.63  | Ball Speed X: 6.31 | Ball Speed Y: 6.31
+Ball 2:	Ball Location X: 100.00 | Ball Location Y: 100.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 3:	Ball Location X: 162.62 | Ball Location Y: 162.62  | Ball Speed X: 126.19 | Ball Speed Y: 126.19
+Ball 4:	Ball Location X: 175.00 | Ball Location Y: 175.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 5:	Ball Location X: 20.06 | Ball Location Y: 20.06  | Ball Speed X: .63 | Ball Speed Y: .63
+Ball 6:	Ball Location X: 50.00 | Ball Location Y: 50.00  | Ball Speed X: .00 | Ball Speed Y: .00
+
+PROGRESS REPORT at 00:00:00.2000
+Ball 1:	Ball Location X: 201.03 | Ball Location Y: 201.03  | Ball Speed X: 3.98 | Ball Speed Y: 3.98
+Ball 2:	Ball Location X: 100.00 | Ball Location Y: 100.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 3:	Ball Location X: 170.58 | Ball Location Y: 170.58  | Ball Speed X: 79.62 | Ball Speed Y: 79.62
+Ball 4:	Ball Location X: 175.00 | Ball Location Y: 175.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 5:	Ball Location X: 20.06 | Ball Location Y: 20.06  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 6:	Ball Location X: 50.00 | Ball Location Y: 50.00  | Ball Speed X: .00 | Ball Speed Y: .00
+
+PROGRESS REPORT at 00:00:00.3000
+Ball 1:	Ball Location X: 201.28 | Ball Location Y: 201.28  | Ball Speed X: 2.51 | Ball Speed Y: 2.51
+Ball 2:	Ball Location X: 100.00 | Ball Location Y: 100.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 3:	Ball Location X: 175.61 | Ball Location Y: 175.61  | Ball Speed X: 50.24 | Ball Speed Y: 50.24
+Ball 4:	Ball Location X: 175.00 | Ball Location Y: 175.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 5:	Ball Location X: 20.06 | Ball Location Y: 20.06  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 6:	Ball Location X: 50.00 | Ball Location Y: 50.00  | Ball Speed X: .00 | Ball Speed Y: .00
+
+PROGRESS REPORT at 00:00:00.4000
+Ball 1:	Ball Location X: 201.44 | Ball Location Y: 201.44  | Ball Speed X: 1.58 | Ball Speed Y: 1.58
+Ball 2:	Ball Location X: 100.00 | Ball Location Y: 100.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 3:	Ball Location X: 178.77 | Ball Location Y: 178.77  | Ball Speed X: 31.70 | Ball Speed Y: 31.70
+Ball 4:	Ball Location X: 175.00 | Ball Location Y: 175.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 5:	Ball Location X: 20.06 | Ball Location Y: 20.06  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 6:	Ball Location X: 50.00 | Ball Location Y: 50.00  | Ball Speed X: .00 | Ball Speed Y: .00
+
+PROGRESS REPORT at 00:00:00.5000
+Ball 1:	Ball Location X: 201.54 | Ball Location Y: 201.54  | Ball Speed X: 1.00 | Ball Speed Y: 1.00
+Ball 2:	Ball Location X: 100.00 | Ball Location Y: 100.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 3:	Ball Location X: 180.77 | Ball Location Y: 180.77  | Ball Speed X: 20.00 | Ball Speed Y: 20.00
+Ball 4:	Ball Location X: 175.00 | Ball Location Y: 175.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 5:	Ball Location X: 20.06 | Ball Location Y: 20.06  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 6:	Ball Location X: 50.00 | Ball Location Y: 50.00  | Ball Speed X: .00 | Ball Speed Y: .00
+
+PROGRESS REPORT at 00:00:00.6000
+Ball 1:	Ball Location X: 201.60 | Ball Location Y: 201.60  | Ball Speed X: .63 | Ball Speed Y: .63
+Ball 2:	Ball Location X: 100.00 | Ball Location Y: 100.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 3:	Ball Location X: 182.04 | Ball Location Y: 182.04  | Ball Speed X: 12.62 | Ball Speed Y: 12.62
+Ball 4:	Ball Location X: 175.00 | Ball Location Y: 175.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 5:	Ball Location X: 20.06 | Ball Location Y: 20.06  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 6:	Ball Location X: 50.00 | Ball Location Y: 50.00  | Ball Speed X: .00 | Ball Speed Y: .00
+
+PROGRESS REPORT at 00:00:00.7000
+Ball 1:	Ball Location X: 201.60 | Ball Location Y: 201.60  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 2:	Ball Location X: 100.00 | Ball Location Y: 100.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 3:	Ball Location X: 182.83 | Ball Location Y: 182.83  | Ball Speed X: 7.96 | Ball Speed Y: 7.96
+Ball 4:	Ball Location X: 175.00 | Ball Location Y: 175.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 5:	Ball Location X: 20.06 | Ball Location Y: 20.06  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 6:	Ball Location X: 50.00 | Ball Location Y: 50.00  | Ball Speed X: .00 | Ball Speed Y: .00
+
+All soccer balls have stopped moving, stopping sim......
+NO COLLISION POSSIBLE!
+Simulation required 7 iterations to complete.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball set five balls 1.234 second time slice...
+...   Should say "not possible @ 13:29.5"  
+======================================  
+
+  Hello, world, from the SoccerSim program!
+
+FIELD SIZE IS 1000.0 by 1000.0 - POLE LOCATION @ 355.0, 355.0
+TIMESLICE VALUE IS: 1.234 seconds - FRICTION COEFFICIENT IS: 0.98766
+
+INITIAL REPORT at 00:00:00.0000
+Ball 1:	Ball Location X: 200.00 | Ball Location Y: 200.00  | Ball Speed X: 10.00 | Ball Speed Y: 10.00
+Ball 2:	Ball Location X: 100.00 | Ball Location Y: 100.00  | Ball Speed X: -100.00 | Ball Speed Y: -100.00
+Ball 3:	Ball Location X: 150.00 | Ball Location Y: 150.00  | Ball Speed X: 200.00 | Ball Speed Y: 200.00
+Ball 4:	Ball Location X: 175.00 | Ball Location Y: 175.00  | Ball Speed X: -110.00 | Ball Speed Y: -110.00
+Ball 5:	Ball Location X: 20.00 | Ball Location Y: 20.00  | Ball Speed X: 1.00 | Ball Speed Y: 1.00
+Ball 6:	Ball Location X: 50.00 | Ball Location Y: 50.00  | Ball Speed X: -5.00 | Ball Speed Y: -5.00
+
+PROGRESS REPORT at 00:00:01.2340
+Ball 1:	Ball Location X: 200.04 | Ball Location Y: 200.04  | Ball Speed X: .03 | Ball Speed Y: .03
+Ball 2:	Ball Location X: 100.00 | Ball Location Y: 100.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 3:	Ball Location X: 150.84 | Ball Location Y: 150.84  | Ball Speed X: .68 | Ball Speed Y: .68
+Ball 4:	Ball Location X: 175.00 | Ball Location Y: 175.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 5:	Ball Location X: 20.00 | Ball Location Y: 20.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 6:	Ball Location X: 50.00 | Ball Location Y: 50.00  | Ball Speed X: .00 | Ball Speed Y: .00
+
+All soccer balls have stopped moving, stopping sim......
+NO COLLISION POSSIBLE!
+Simulation required 1 iterations to complete.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball set ten balls 10 second time slice...
+...   Should contact ball 1 and 8 @ 30 sec  
+======================================  
+
+  Hello, world, from the SoccerSim program!
+
+FIELD SIZE IS 1000.0 by 1000.0 - POLE LOCATION @ 355.0, 355.0
+TIMESLICE VALUE IS: 10.0 seconds - FRICTION COEFFICIENT IS: 0.9
+
+INITIAL REPORT at 00:00:00.0000
+Ball 1:	Ball Location X: 150.00 | Ball Location Y: 150.00  | Ball Speed X: 10.00 | Ball Speed Y: 10.00
+Ball 2:	Ball Location X: 100.00 | Ball Location Y: 100.00  | Ball Speed X: -100.00 | Ball Speed Y: -100.00
+Ball 3:	Ball Location X: 200.00 | Ball Location Y: 200.00  | Ball Speed X: 200.00 | Ball Speed Y: 200.00
+Ball 4:	Ball Location X: 250.00 | Ball Location Y: 250.00  | Ball Speed X: -110.00 | Ball Speed Y: -110.00
+Ball 5:	Ball Location X: 20.00 | Ball Location Y: 20.00  | Ball Speed X: 1.00 | Ball Speed Y: 1.00
+Ball 6:	Ball Location X: 50.00 | Ball Location Y: 50.00  | Ball Speed X: -5.00 | Ball Speed Y: -5.00
+Ball 7:	Ball Location X: -100.00 | Ball Location Y: -100.00  | Ball Speed X: 200.00 | Ball Speed Y: 200.00
+Ball 8:	Ball Location X: -200.00 | Ball Location Y: -200.00  | Ball Speed X: 300.00 | Ball Speed Y: 300.00
+Ball 9:	Ball Location X: -110.00 | Ball Location Y: -110.00  | Ball Speed X: 20.00 | Ball Speed Y: 20.00
+Ball 10:	Ball Location X: 1.00 | Ball Location Y: 1.00  | Ball Speed X: 50.00 | Ball Speed Y: 50.00
+
+PROGRESS REPORT at 00:00:10.0000
+Ball 1:	Ball Location X: 150.00 | Ball Location Y: 150.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 2:	Ball Location X: 100.00 | Ball Location Y: 100.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 3:	Ball Location X: 200.00 | Ball Location Y: 200.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 4:	Ball Location X: 250.00 | Ball Location Y: 250.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 5:	Ball Location X: 20.00 | Ball Location Y: 20.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 6:	Ball Location X: 50.00 | Ball Location Y: 50.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 7:	Ball Location X: -100.00 | Ball Location Y: -100.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 8:	Ball Location X: -200.00 | Ball Location Y: -200.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 9:	Ball Location X: -110.00 | Ball Location Y: -110.00  | Ball Speed X: .00 | Ball Speed Y: .00
+Ball 10:	Ball Location X: 1.00 | Ball Location Y: 1.00  | Ball Speed X: .00 | Ball Speed Y: .00
+
+All soccer balls have stopped moving, stopping sim......
+NO COLLISION POSSIBLE!
+Simulation required 1 iterations to complete.
+.                                       
+.                                       
+======================================  
+... End of SoccerSim Testing...         
+======================================  
