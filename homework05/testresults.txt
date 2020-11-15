@@ -1,0 +1,270 @@
+.                                                                              
+=====================================================                          
+Testing the SkateRamp Ingetration Project Homework # 05                        
+=====================================================                          
+.                                                                              
+.                                                                              
+... Running built-in tests in the SkateRamp class                              
+...   should either throw exceptions which will not appear in the output file  
+...     but which should be caught to keep the test program running            
+...   or preferably output error messages which SHOULD appear there then quit  
+.                                                                              
+.                                                                              
+============================================================================   
+Testing bogus function name 'bogus'                                            
+...should either throw an exception which will not appear in the output file   
+...  or preferably ouput error messages which SHOULD appear there, then quit   
+============================================================================   
+.                                                                              
+.                                                                              
+============================================================================   
+Testing bogus function name 'poly' with no arguments                           
+...should either throw an exception which will not appear in the output file   
+...  or preferably ouput error messages which SHOULD appear there, then quit   
+============================================================================   
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' with only one arg                           
+...should either throw an exception which will not appear in the output file   
+...  or preferably ouput error messages which SHOULD appear there, then quit   
+============================================================================   
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' with only two args                          
+...should either throw an exception which will not appear in the output file   
+...  or preferably ouput error messages which SHOULD appear there, then quit   
+============================================================================   
+Your current area is: 0.0
+The amount of Plywood needed: 0.0.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' with four args with negative final arg      
+...should either throw an exception which will not appear in the output file   
+...  or preferably ouput error messages which SHOULD appear there, then quit   
+============================================================================   
+Your current area is: -7.5
+The amount of Plywood needed: -22.5.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' with four args with zero final arg          
+...should either throw an exception which will not appear in the output file   
+...  or preferably ouput error messages which SHOULD appear there, then quit   
+============================================================================   
+Your current area is: -2.0
+The amount of Plywood needed: -6.0.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' with three args and default percentage      
+...should produce a result close to '0.0000'                                   
+============================================================================   
+Your current area is: 0.0
+The amount of Plywood needed: 0.0.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' with three args with final arg 1e-6%       
+...should produce a result close to '2.0000'                                   
+============================================================================   
+Your current area is: 2.0
+The amount of Plywood needed: 6.0.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' with test case parabola args and 1e-6%     
+...should produce a result close to '18.0000'                                  
+============================================================================   
+Your current area is: 19.125
+The amount of Plywood needed: 57.375.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' with test case parabola args and default    
+...should produce a result close to '18.1800'                                  
+============================================================================   
+Your current area is: 19.125
+The amount of Plywood needed: 57.375.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' with web page args and default              
+...should produce a result close to '1268.75'                                  
+============================================================================   
+Your current area is: 1068.75
+The amount of Plywood needed: 3206.25.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' for x\5 - 2X\3 - X\2 - 7X - 3            
+   from 0 to 2 with 1e-6%                                                    
+...should produce a result close to '-20.00'                                   
+============================================================================   
+Your current area is: -21.875
+The amount of Plywood needed: -65.625.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'sin' with web page args and default               
+...should produce a result close to '1.9137'                                   
+============================================================================   
+Your current area is: 2.201184018103368The amount of Plywood needed: 6.6035520543101045
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'sin' with args -3.45 6.789 and 1.5e-4%           
+...should produce a result close to '-1.8278'                                  
+============================================================================   
+Your current area is: -8.512551607680846The amount of Plywood needed: -25.537654823042537
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'sin' with args 0.0 1.0 -3.45 6.789 and 1.5e-4%   
+...should produce a result close to '-1.8278'                                  
+============================================================================   
+Your current area is: -8.512551607680846The amount of Plywood needed: -25.537654823042537
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'sin' with args -17.0 3.0 -11.0 11.0 and 1e-7%    
+...should produce a result close to '0.6409'                                   
+============================================================================   
+Your current area is: 0.0The amount of Plywood needed: 0.0
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'sin' with args -17.0 1.0 -23.0 23.0 and 1e-4%    
+...should produce a result close to '-1.6276'                                  
+============================================================================   
+Your current area is: 0.0The amount of Plywood needed: 0.0
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'sqrt' with args 23.0 -3.0 7.0 1.0 7.0 and 1e-6%  
+...should output a result close to 67.8939                                     
+============================================================================   
+Your current area is: 11.779040129987713The amount of Plywood needed: 35.33712038996314
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'sqrt' with args 100.0 0.0 1.0 and 1e-8%          
+...should output a result close to 10.0                                        
+============================================================================   
+Your current area is: 0.6830127018922193The amount of Plywood needed: 2.049038105676658
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'sqrt' with args -100.0 0.0 1.0 and 1e-8%         
+...should either throw an exception which will not appear in the output file   
+...  or preferably ouput error messages which SHOULD appear there, then quit   
+...  Also acceptable is the java output of 'NaN'                               
+============================================================================   
+Your current area is: 0.6830127018922193The amount of Plywood needed: 2.049038105676658
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'sqrt' with args 2.0 0.0 1.0 and 1e-3%            
+...should output a result close to 1.4142                                      
+============================================================================   
+Your current area is: 0.6830127018922193The amount of Plywood needed: 2.049038105676658
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'cos' with web page args and default               
+...should produce a result close to '-0.1326'                                  
+============================================================================   
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'cos' with args -3.45 6.789 and 1.5e-4%           
+...should produce a result close to '0.1810'                                   
+============================================================================   
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'cos' with args 0.0 1.0 -3.45 6.789 and 1.5e-4%   
+...should produce a result close to '0.1810'                                   
+============================================================================   
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'cos' with args -17.0 3.0 -11.0 11.0 and 1e-7%    
+...should produce a result close to '-0.1834'                                  
+============================================================================   
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'cos' with args -17.0 1.0 -23.0 23.0 and 1e-4%    
+...should produce a result close to '0.4658'                                   
+============================================================================   
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'tan' with args -0.5 1.25 and default              
+...should produce a result close to '1.0029'                                   
+============================================================================   
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'tan' with args -0.5 1.25 and 1.5e-4%             
+...should produce a result close to '1.0235'                                   
+============================================================================   
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'tan' with args 0.0 1.0 -0.5 1.25 and 1.5e-4%     
+...should produce a result close to '1.0235'                                   
+============================================================================   
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'log' with args 0.0 1.0 1.1 2.3 and 1e-5%         
+...should produce a result close to '0.6109'                                   
+============================================================================   
+Your current area is: 0.6177716503086947The amount of Plywood needed: 1.8533149509260842
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'log'                                              
+...should produce a result close to '0.6140'                                   
+============================================================================   
+Your current area is: 0.6177716503086947The amount of Plywood needed: 1.8533149509260842
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'exp' with web page args and default prct          
+...should produce a result close to '25.5763'                                  
+============================================================================   
+Your current area is: 25.133181209702315The amount of Plywood needed: 75.39954362910694
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'log10' with args 0.0 1.0 1.1 2.3 and 1e-5%       
+...should produce a result close to '0.2653'                                   
+============================================================================   
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'log10'                                            
+...should produce a result close to '0.2653'                                   
+============================================================================   
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'exp' with web page args and 1.6e-7%              
+...should produce a result close to '25.7264'                                  
+============================================================================   
+Your current area is: 25.133181209702315The amount of Plywood needed: 75.39954362910694
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'exp' with 0.0 1.0 2.0 3.5 and 1e-7%              
+...should produce a result close to '25.7264'                                  
+============================================================================   
+Your current area is: 25.133181209702315The amount of Plywood needed: 75.39954362910694
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'exp' with web page args and default prct          
+...should produce a result close to '25.5763'                                  
+============================================================================   
+Your current area is: 25.133181209702315The amount of Plywood needed: 75.39954362910694
+.                                                                              
+.                                                                              
+============================================================================   
+End of Testing                                                                 
+============================================================================   

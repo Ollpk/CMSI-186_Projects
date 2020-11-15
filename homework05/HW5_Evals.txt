@@ -67,14 +67,14 @@ Integrators class [EC]  : if it exists/compiles [optional]  - 1/1 point EC
 Integrate polynomials   : method exists in some file        - 1/1 point
 Integrate sine          : method exists in some file        - 1/1 point
 
-Integrate cosine        : method exists in some file        - 1/1 point EC
-Integrate tangent       : method exists in some file        - 1/1 point EC
+Integrate cosine        : method exists in some file        - 0/1 point EC
+Integrate tangent       : method exists in some file        - 0/1 point EC
 Integrate log           : method exists in some file        - 1/1 point EC
 Integrate exp           : method exists in some file        - 1/1 point EC
 Integrate sq. root      : method exists in some file        - 1/1 point EC
-Integrate compos.       : method exists in some file        - 1/1 point EC
+Integrate compos.       : method exists in some file        - 0/1 point EC
 
-runmytests method       : method tests two required func.   - 2/2 point
+runmytests method       : method tests two required func.   - 1/2 point
 tests input valid       : passes all six checks             - 6/6 points
 tests for 2nd deg poly  : gets [nearly] correct on 5 tests  - 5/5 points
 test for 5th deg poly   : gets [nearly] correct on test     - 1/1 point
@@ -92,8 +92,28 @@ Seven EC points added to total:  38 out of 31 = 122.58% which is an A-plus
 
 Detailed comments:
 ==================
+EXCELLENT work, Jake!  Your code runs and produces values that are pretty
+close!  You implemented several of the optional functions, too!  You didn't
+catch ALL of the bogus arguments, but you DO handle the optional argument.
 
+ONe problem is that you don't handle the "runmytests" function.  I tried it
+as "runmytests" and "runMyTests" but no joy.  You wrote the code, but you
+never check to see if that function is provided as arg[0]!  *ACK!*  You
+earn 1/2 credit for writing the code, though.
 
-Your score: 31.0 out of 31.0 = 100.00% which is an A-plus.
+Your score: 34.0 out of 31.0 = 109.68% which is an A-plus.
 
-Sorry for the bad news, better luck next time!
+Great work, sir!
+
+For the semester you have:
+   homework00:    5.00
+   homework01:    5.00
+   homework02:    4.84
+   homework03:   10.00
+   homework04:    9.34
+   homework05:   16.45
+   -------------------
+        total:   50.63 out of 50 which is 101.26% which is an A-plus
+
+Keep up the good work!  On to BrobdingagianInteger!!
+
