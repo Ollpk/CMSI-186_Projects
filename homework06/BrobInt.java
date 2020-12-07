@@ -1,5 +1,8 @@
 import java.util.Arrays;
 
+
+import java.util.Arrays;
+
 public class BrobInt {
 
     public static final BrobInt ZERO = new BrobInt("0");
@@ -50,13 +53,15 @@ public class BrobInt {
 
     // If A.add(B) A = object calling add. This = Value of original object.
     public BrobInt add(BrobInt value) {
-        if (this.equals(ZERO)) {
+        System.out.println( "\n   input numbers to add: this: " + this.toString() + " and value: " + value.toString() );
+        if (this.equals(BrobInt.ZERO)) {
             return value;
         }
-        if (value.equals(ZERO)) {
+        if (value.equals(BrobInt.ZERO)) {
 
             return this;
         }
+        System.out.println( "\n   input numbers to add: this: " + this.toString() + " and value: " + value.toString() );
 
         int smallSign = sign;
         int largeSign = value.sign;
@@ -72,6 +77,9 @@ public class BrobInt {
         }
         int carry = 0;
 
+        System.out.println( "\n   input numbers to add: this: " + this.toString() + " and value: " + value.toString() );
+        toArray( smallChunks );   toArray( largeChunks );
+
         String answer = "";
         int[] result = new int[largeChunks.length + 1];
         if (largeSign == smallSign) {
@@ -81,11 +89,15 @@ public class BrobInt {
 
                 carry = sum / 10;
 
-                result[largeChunks.length - 1 - i] = 5;
+                result[largeChunks.length - 1 - i] = sum % 10;
 
             }
+            toArray( result );         // print out result
 
-            answer = result.toString();
+            for( int i = 0; i < result.length - 1; i++ ) {
+               answer += Integer.toString( result[i] );
+            }
+            System.out.println( "    Answer is: " + answer );
 
             BrobInt calculation = new BrobInt(answer);
 
@@ -93,17 +105,17 @@ public class BrobInt {
 
             /*
              * if (largeSign < 0 && smallSign < 0) { String negSign = "-";
-             * 
+             *
              * answer = negSign + answer;
-             * 
+             *
              * BrobInt calculation = new BrobInt(answer);
-             * 
+             *
              * return calculation;
-             * 
+             *
              * } else {
-             * 
+             *
              * BrobInt calculation = new BrobInt(answer);
-             * 
+             *
              * return calculation; }
              */
 
@@ -115,6 +127,10 @@ public class BrobInt {
         }
 
     }
+
+   public void toArray( int[] d ) {
+      System.out.println( "Array contents: " + Arrays.toString( d ) );
+   }
 
     public BrobInt subtract(BrobInt value) {
 
@@ -166,11 +182,14 @@ public class BrobInt {
 
     }
 
-    public boolean equals(Object x) {
-
-        return true;
-
-    }
+  /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   *  Method to check if a BrobInt passed as argument is equal to this BrobInt
+   *  @param  bint     BrobInt to compare to this
+   *  @return boolean  that is true if they are equal and false otherwise
+   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+   public boolean equals( BrobInt bint ) {
+      return ( (sign == bint.sign) && (this.toString().equals( bint.toString() )) );
+   }
 
     public static BrobInt valueOf(long value) {
 
@@ -180,15 +199,34 @@ public class BrobInt {
 
     }
 
-    public static void main(String[] arguments) {
+    public static void main(String [] arguments) {
 
+        System.out.println( "\n\n  Making new BrobInt for " + arguments[0] );
         BrobInt box1 = new BrobInt(arguments[0]);
-
+        System.out.println( "\n\n  Making new BrobInt for " + arguments[1] );
         BrobInt box2 = new BrobInt(arguments[1]);
-
+        System.out.println( "\n\n  Adding box1 and box2.... " );
         BrobInt box3 = box1.add(box2);
-
-        System.out.println("Your answer is: " + box3);
+        System.out.println( "\n    Your answer is: " + box3.toString() );
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
