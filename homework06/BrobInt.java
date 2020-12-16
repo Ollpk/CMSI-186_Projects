@@ -1,310 +1,340 @@
-import java.math.BigInteger;
 import java.util.Arrays;
 
 public class BrobInt {
 
-    public static final BrobInt ZERO = new BrobInt("0");
-
-    public static final BrobInt ONE = new BrobInt("1");
-
-    public static final BrobInt TEN = new BrobInt("10");
-
-    public static final BrobInt negOne = new BrobInt("-1");
+    public static final BrobInt ZERO   = new BrobInt("0");
+    public static final BrobInt ONE    = new BrobInt("1");
+    public static final BrobInt TEN    = new BrobInt("10");
+    public static final BrobInt NEGONE = new BrobInt("-1");
 
     public int sign;
-
+    public int bsign;
     public int[] chunks;
+    public  String internalValue = "";        // internal String representation of this BrobInt
+    private String reversed      = "";        // the backwards version of the internal String representation
+    private static final boolean DEBUG_ON = false;
+    private static final boolean INFO_ON  = false;
 
     public BrobInt(String value) {
         // May want to create a method that chunks any extra digits. For instance, if
         // there is 00000045454, we want to get rid of the zeros.
-        value = stringSignConversion(value);
-
-        chunks = new int[value.length()];
-
-        for (int i = 0; i < chunks.length; i++) {
-
-            String d = String.valueOf(value.charAt(i));
-            chunks[i] = Integer.parseInt(d);
-
+        internalValue = value;
+        reversed = new String( new StringBuffer( internalValue ).reverse() );
+        if( value.charAt(0) == '+' ) {
+            bsign = 0;
+            reversed = reversed.substring( 0, reversed.length() - 1 );
+        } else if( value.charAt(0) == '-' ) {
+           bsign = 1;
+           reversed = reversed.substring( 0, reversed.length() - 1 );
         }
-
+        value = stringSignConversion( internalValue );
+        chunks = new int[value.length()];
+        for( int i = 0; i < chunks.length; i++ ) {
+            chunks[i] = Integer.parseInt( String.valueOf( value.charAt(i) ) );
+        }
     }
 
-    public String stringSignConversion(String value) {
+    public String stringSignConversion( String value ) {
+        int index = 0;
         if (value.charAt(0) == '-') {
             sign = -1;
-
-            return value.split("-")[1];
-
+            index = 1;
         } else if (value.equals("0")) {
             sign = 0;
-
-            return value;
-
         } else {
             sign = 1;
-
-            return value;
-
         }
+        return value.substring( index );
 
     }
 
-    // If A.add(B) A = object calling add. This = Value of original object.
-    public BrobInt add(BrobInt value) {
-        System.out.println("\n   input numbers to add: this: " + this.toString() + " and value: " + value.toString());
-        if (this.equals(BrobInt.ZERO)) {
-            return value;
-        }
-        if (value.equals(BrobInt.ZERO)) {
+  /**
+   *  add method
+   */
+    public BrobInt add(BrobInt bint) {
+      boolean carry = false;              // handles the carry for addition
+      boolean posResult = true;           // true if result is positive
+      BrobInt me  = null;                 // for use in calling "subtract()" for when there are
+      BrobInt she = null;                 //    opposite signs [take smaller from larger, use larger's sign]
 
-            return this;
-        }
+     // dimension the byte arrays and set the shortest length tracker (i.e. "j") to zero
+      int[] a = new int[reversed.length()];
+      int[] b = new int[bint.reversed.length()];
+      int[] c = new int[(Math.max( reversed.length(), bint.reversed.length() )) + 2];
 
-        int sign1 = this.compareTo(value);
-        int smallSign = sign;
-        int largeSign = value.sign;
-        String answer = "";
-        int[] smallChunks = chunks;
-        int[] largeChunks = value.chunks;
-        int carry = 0;
-        if (chunks.length >= value.chunks.length) {
-            smallChunks = value.chunks;
-            largeChunks = chunks;
-            smallSign = value.sign;
-            largeSign = sign;
-        }
-        // if both numbers are the Same number!
-        if (sign1 == 0) {
-            if (value.sign == -1) {
-                String str = value.toString();
-                str.replace("-", "");
-                BrobInt bint = new BrobInt(str);
-                this.subtract(bint);
+      int          j        = 0;
+      String       result_s = null;
+      StringBuffer result   = null;
 
+
+     // handle opposite signs: need to determine largest absolute value then take the
+     //  smaller from the larger and use the sign of the larger
+      if( bint.bsign != bsign ) {
+         if( INFO_ON ) { System.out.println( "   ===DIFFERENT SIGNS===" ); }
+         if( 1 == bint.bsign ) {
+           // makes "she" the absolute value of bint
+            she = new BrobInt( bint.toString().substring( 1, bint.toString().length() ) );
+            me = subtract( she );
+            if( INFO_ON ) { System.out.println( "      she is: " + she.toString() ); }
+            if( INFO_ON ) { System.out.println( "       me is: " + me.toString()  ); }
+            return me;
+         } else if( 1 == bsign ) {
+            me = new BrobInt( toString().substring( 1, toString().length() ) );  // "me" abs of this
+            she = bint.subtract( me );
+            if( INFO_ON ) { System.out.println( "       me is: " + me.toString()  ); }
+            if( INFO_ON ) { System.out.println( "      she is: " + she.toString() ); }
+            return she;
+         }
+      }
+
+     // assign the values to each int array
+      for( int i = 0; i < a.length; i++ ) {
+         a[i] = reversed.charAt(i) - 48;           // NOTE: only works for ASCII
+      }
+      for( int i = 0; i < b.length; i++ ) {
+         b[i] = bint.reversed.charAt(i) - 48;      // NOTE: only works for ASCII
+      }
+      if( INFO_ON ) { toArray( a ); }
+      if( INFO_ON ) { toArray( b ); }
+
+     // perform the addition for the shortest part
+      for( int i = 0; i < (Math.min(a.length, b.length)); i++ ) {
+
+        // do the addition part
+         if( carry ) {
+            c[i] = a[i] + b[i] + 1;
+         } else {
+            c[i] = a[i] + b[i];
+         }
+
+        // handle the carry part
+         if( c[i] > 9 ) {
+            carry = true;
+            c[i] = c[i] - 10;
+         } else {
+            carry = false;
+         }
+         j++;        // brute force to keep track of the end of the shortest array for later
+      }
+      if( INFO_ON ) { toArray( a ); toArray( b ); toArray( c ); }
+
+     // if they aren't the same length, copy the rest of the numbers from
+     //  the longer number into the result, rippling the carry across if needed
+      if( a.length < b.length ) {
+         for( int i = j; i < b.length; i++ ) {
+            if( carry ) {
+               c[i] = b[j++] + 1;
+               if( c[i] > 9 ) {
+                  carry = true;
+                  c[i] = c[i] - 10;
+               } else {
+                  carry = false;
+               }
             } else {
-                int[] results = new int[largeChunks.length];
-                for (int i = 0; i < largeChunks.length; i++) {
-                    int sum = ((this.chunks[this.chunks.length - 1 - i] + value.chunks[value.chunks.length - 1 - i])
-                            + carry);
-                    carry = sum / 10;
-                    if (this.chunks.length - 1 - i == 0 && value.chunks.length - 1 - i == 0) {
-                        results[largeChunks.length - 1 - i] = sum;
-                    } else {
-                        results[largeChunks.length - 1 - i] = sum % 10;
-                    }
-
-                }
-
+               c[i] = b[i];
             }
-            // when the first number is Larger than the Second number!
-        } else if (sign1 == 1) {
-            if (value.sign == -1) {
-                String str = value.toString();
-                str = str.replace("-", "");
-                BrobInt bint = new BrobInt(str);
-                this.subtract(bint);
-
+         }
+      } else if( a.length > b.length ) {
+         for( int i = j; i < a.length; i++ ) {
+            if( carry ) {
+               c[i] = a[j++] + 1;
+               if( c[i] > 9 ) {
+                  carry = true;
+                  c[i] = c[i] - 10;
+               } else {
+                  carry = false;
+               }
             } else {
-                int[] results = new int[largeChunks.length];
-                for (int i = 0; i < largeChunks.length; i++) {
-                    if (smallChunks.length - 1 - i > -1) {
-                        int sum = (smallChunks[smallChunks.length - i - 1]) + (largeChunks[largeChunks.length - i - 1])
-                                + carry;
-                        carry = sum / 10;
-                        if (this.chunks.length - 1 - i == 0 && value.chunks.length - 1 - i == 0) {
-                            results[largeChunks.length - 1 - i] = sum;
-                        } else {
-                            results[largeChunks.length - 1 - i] = sum % 10;
-                        }
-
-                    } else {
-                        results[largeChunks.length - 1 - i] = largeChunks[largeChunks.length - i - 1];
-
-                    }
-                }
-                for (int i = 0; i < results.length - 1; i++) {
-                    answer += Integer.toString(results[i]);
-                }
-                System.out.println("    Answer is: " + answer);
-
-                BrobInt calculation = new BrobInt(answer);
-
-                return calculation;
-
+               c[i] = a[i];
             }
-            // When the first number is SMALLER than the second number
-        } else {
-            if (value.sign == -1) {
-                String str = value.toString();
-                str.replace("-", "");
-                BrobInt bint = new BrobInt(str);
-                this.subtract(bint);
+         }
+      }
 
-            } else {
-                int[] results = new int[largeChunks.length];
-                for (int i = 0; i < largeChunks.length; i++) {
-                    if (smallChunks.length - 1 - i > -1) {
-                        int sum = (smallChunks[smallChunks.length - i - 1]) + (largeChunks[largeChunks.length - i - 1])
-                                + carry;
-                        carry = sum / 10;
-                        if (this.chunks.length - 1 - i == 0 && value.chunks.length - 1 - i == 0) {
-                            results[largeChunks.length - 1 - i] = sum;
-                        } else {
-                            results[largeChunks.length - 1 - i] = sum % 10;
-                        }
+     // build the result string
+      result = new StringBuffer();
+      for( int i = 0; i < Math.max(a.length, b.length); i++ ) {
+         result = result.append( (int)c[i] );
+      }
+      if( carry ) {
+         result = result.append( '1' );
+      }
+      if( bsign == 1 ) {
+         result = result.append( "-" );
+      }
+      result_s = new String( result.reverse() );
 
-                    }
-                    results[largeChunks.length - 1 - i] = largeChunks[largeChunks.length - i - 1];
-
-                }
-                for (int i = 0; i < results.length - 1; i++) {
-                    answer += Integer.toString(results[i]);
-                }
-                System.out.println("    Answer is: " + answer);
-
-                BrobInt calculation = new BrobInt(answer);
-
-                return calculation;
-            }
-
-        }
-        return BrobInt.ONE;
-
-    }
+      return new BrobInt( result_s );
+   }
 
     public void toArray(int[] d) {
         System.out.println("Array contents: " + Arrays.toString(d));
 
     }
 
-    public BrobInt subtract(BrobInt bint) {
-        // throw new UnsupportedOperationException("\n Sorry, that operation is not yet
-        // implemented.");
+  /**
+   *  subtract method
+   */
+   public BrobInt subtract(BrobInt bint) {
+      boolean      borrow   = false;            // handles the borrow for addition
+      boolean      negative = false;            // set to true if result should be negative
+      byte[]       a        = null;
+      byte[]       b        = null;
+      int          j        = 0;
+      int          mySign   = 0;                // initialize to positive
+      int          bintSign = 0;                // initialize to positive
+      String       result_s = null;
+      StringBuffer result   = null;
+      boolean      caseNine = false;            // Tracks if both negative but bint is longer, so MORE negative
 
-        // remember - this is the method that will tell you which number is bigger. 0
-        // tells you that they are the same number, -1 if the first one is smaller, and
-        // 1 if the first one is bigger
-        String finalAnswer = "";
-        int sign2 = this.compareTo(bint);
-        System.out.println("This is your sign that is provided from compare method when subtracting " + this.toString()
-                + " - " + bint.toString() + ":  " + sign2);
-        System.out.println("This is the sign of your second value: " + bint.sign);
-        // if both of the numbers are the same number!
-        if (sign2 == 0) {
-            return ZERO;
+     // set up for the sign handling to decide what to do based on the following cases:
+     //    1. no signs at all, this item larger than argument:        simple subtraction a - b
+     //    2. both signs positive, this item larger than argument:    simple subtraction a - b
+     //    3. one positive one no sign, this item larger than arg:    simple subtraction a - b
+     //    4. no signs at all, this item smaller than argument:       swap a & b, subtract a - b, result negative
+     //    5. both signs positive, this item smaller than argument:   swap a & b, subtract a - b, result negative
+     //    6. one positive one no sign, this item smaller than arg:   swap a & b, subtract a - b, result negative
+     //    7. this no sign or positive, arg negative:                 remove neg from arg and call this.add( arg )
+     //    8. this negative, arg positive:                            add negative to arg and call this.add( arg )
+     //    9. both signs negative, this larger abs than arg abs:      remove signs, subtract, add neg to result
+     //   10. both signs negative, this smaller abs than arg abs:     remove signs, swap a & b, subtract, result pos
+     //
+     // set the sign for 'this'; already initialized to zero for positive default, so check for minus
+     //  NOTE: signs removed in the constructors and "sign" values set for easier handling
+      mySign   = bsign;
+      bintSign = bint.bsign;
 
-            // if the first number is smaller than the second number!
-        } else if (sign2 == -1) {
+     // check to set the negative boolean for later or perform addition instead
+      if( (0 == mySign) && (0 == bintSign) && (0 <= this.compareTo( bint )) ) {           // case 1 - 3
+         negative = false;
+      } else if( (0 == mySign) && (0 == bintSign) && (0 > this.compareTo( bint )) ) {     // case 4 - 6
+         negative = true;
+      } else if( (0 == mySign) && (1 == bintSign) && (0 < this.compareTo( bint )) ) {     // case 7
+         BrobInt bint1 = new BrobInt( new String( bint.internalValue.substring( 1, bint.internalValue.length() ) ) );
+         return this.add( bint1 );
+      } else if( (1 == mySign) && (0 == bintSign) && (0 > this.compareTo( bint )) ) {     // case 8
+         negative = true;
+         BrobInt gMe = new BrobInt( new String( internalValue.substring( 1, internalValue.length() ) ) );
+         BrobInt myResult = new BrobInt( new String( "-" + gMe.add( bint ).toString() ) );
+         return myResult;
+      } else if( (1 == mySign) && (1 == bintSign) && (0 < this.compareTo( bint )) ) {     // case 9
+         negative = true;
+         caseNine = true;
+      } else if( (1 == mySign) && (1 == bintSign) && (0 > this.compareTo( bint )) ) {     // case 10
+         negative = false;
+      }
 
-            if (bint.sign == -1) {
+     // this is the case for which both signs are negative, but bint is a longer string than this, so
+     //  it is actually MORE negative.  Thus we are subtracting a negative from a negative, which is the
+     //  same as ADDING the negative to a positive.  For example, -999 minus -9999 should be the same
+     //  as -999 plus 9999.  So we need to ADD
+      if( caseNine ) {
+         return add( new BrobInt( bint.internalValue.substring(1) ) );
 
-                BrobInt answer = this.add(new BrobInt(bint.toString().substring(1)));
-                System.out.println("Adding: Answer = " + answer);
-                return answer;
-            } else {
+     // dimension the byte arrays and initialize them appropriately for their lengths;
+     //  'a' gets the longer string; if they are the same length, 'a' gets the bigger value
+      } else if( (reversed.length() > bint.reversed.length()) || (0 <= this.compareTo( bint )) ) {
+         a = new byte[reversed.length()];
+         for( int i = 0; i < a.length; i++ ) {
+            a[i] = (byte)((int)(reversed.charAt(i)) - 48);         // NOTE: only works for ASCII
+         }
+         b = new byte[bint.reversed.length()];
+         for( int i = 0; i < b.length; i++ ) {
+            b[i] = (byte)((int)(bint.reversed.charAt(i)) -48);     // NOTE: only works for ASCII
+         }
+      } else {
+         a = new byte[bint.reversed.length()];
+         for( int i = 0; i < a.length; i++ ) {
+            a[i] = (byte)((int)(bint.reversed.charAt(i)) -48);     // NOTE: only works for ASCII
+         }
+         b = new byte[reversed.length()];
+         for( int i = 0; i < b.length; i++ ) {
+            b[i] = (byte)((int)(reversed.charAt(i)) - 48);         // NOTE: only works for ASCII
+         }
+      }
+      byte[] c = new byte[(Math.max( reversed.length(), bint.reversed.length() )) + 2];
 
-                int[] results = new int[bint.chunks.length];
-                System.out.println("This is the length of your array: " + results.length);
-                toArray(results);
-                for (int i = 0; i < bint.chunks.length; i++) {
+     // perform the subtraction for the shortest part
+     //  if a borrow is required, loop through from the current location to the end of the input,
+     //   if necessary, to find the first non-zero value from which to borrow; that one gets decremented
+     //   and all the ones in between that used to be zero become nines.
+     // perform the subtraction for the shortest part
+      for( int i = 0; i < (Math.min(a.length, b.length)); i++ ) {
+         if( a[i] < b[i] ) {
+            a[i] += 10;
+            a[i + 1]--;
+         }
+         c[i] = (byte)((int)a[i] - (int)b[i]);
+         j++;        // brute force end of the shortest array for later
+      }
 
-                    // Need to separate conditions for when the index of the smaller number is ran
-                    // up. Can't have a negative -1 index...
-
-                    if (this.chunks.length - 1 - i > -1) {
-
-                        if (bint.chunks[bint.chunks.length - 1 - i] >= this.chunks[this.chunks.length - 1 - i]) {
-                            int calculation1 = bint.chunks[bint.chunks.length - 1 - i]
-                                    - this.chunks[this.chunks.length - 1 - i];
-                            results[results.length - 1 - i] = calculation1;
-
-                        } else {
-                            bint.chunks[bint.chunks.length - 1 - i] += 10;
-                            int calculation2 = bint.chunks[bint.chunks.length - 1 - i]
-                                    - this.chunks[this.chunks.length - 1 - i];
-                            results[results.length - 1 - i] = calculation2;
-                            if (bint.chunks[bint.chunks.length - 2 - i] > 0) {
-                                bint.chunks[bint.chunks.length - 2 - i] -= 1;
-                            } else {
-                                bint.chunks[bint.chunks.length - 2 - i] += 9;
-                                bint.chunks[bint.chunks.length - 3 - i] -= 1;
-                            }
-
-                        }
-
-                    } else {
-                        if (bint.chunks[bint.chunks.length - 1 - i] > 0) {
-                            results[results.length - 1 - i] = bint.chunks[bint.chunks.length - 1 - i];
-                        } else if (bint.chunks[bint.chunks.length - 1 - i] < 0) {
-                            bint.chunks[bint.chunks.length - 1 - i] += 10;
-                            results[results.length - 1 - i] = bint.chunks[bint.chunks.length - 1 - i];
-                            bint.chunks[bint.chunks.length - 2 - i] -= 1;
-
-                        }
-
-                    }
-                }
-
-                for (int i = 0; i < results.length; i++) {
-                    finalAnswer += Integer.toString(results[i]);
-                }
-                System.out.println("    Answer is: " + finalAnswer);
-
-                BrobInt calculation = new BrobInt(finalAnswer);
-
-                BrobInt answer = removeLeadingZeros(calculation);
-
-                return answer;
-
+     // propagate the borrow across the longer number if necessary
+      int k = j;
+      if( a.length != b.length ) {
+         while( a[k] == -1 ) {
+            a[k++] += 10;
+            if( k == a.length ) {
+               break;
             }
-            // For if the first number is BIGGER than the Second number
-        } else if (sign2 == 1) {
+            a[k]--;
+         }
+      }
 
-            if (bint.sign == -1) {
-                String str = bint.toString();
-                str.replace("-", "");
-                BrobInt value = new BrobInt(str);
-                BrobInt answer = this.add(value);
-                return answer;
+     // if they aren't the same length, copy the rest of the numbers from
+     //  the longer number into the result, rippling the borrow across if needed
+      if( a.length < b.length ) {
+         for( int i = j; i < b.length; i++ ) {
+            if( borrow ) {
+               c[i] = (byte)((int)b[j] + 1);
+               if( c[i] > 9 ) {
+                  borrow = true;
+                  c[i] = (byte)((int)c[i] - 10);
+               } else {
+                  borrow = false;
+               }
             } else {
-
-                int[] results = new int[this.chunks.length];
-                for (int i = 0; i < this.chunks.length; i++) {
-                    if (bint.chunks.length - 1 - i > -1) {
-                        if (this.chunks[this.chunks.length - 1 - i] >= bint.chunks[bint.chunks.length - 1 - i]) {
-                            int calculation1 = this.chunks[this.chunks.length - 1 - i]
-                                    - bint.chunks[bint.chunks.length - 1 - i];
-                            results[results.length - 1 - i] = calculation1;
-
-                        } else {
-                            this.chunks[this.chunks.length - 1 - i] += 10;
-                            int calculation2 = this.chunks[this.chunks.length - 1 - i]
-                                    - bint.chunks[bint.chunks.length - 1 - i];
-                            results[results.length - 1 - i] = calculation2;
-                            this.chunks[this.chunks.length - 2 - i] -= 1;
-
-                        }
-                    } else {
-                        results[results.length - 1 - i] = this.chunks[this.chunks.length - 1 - i];
-                    }
-                }
-
-                for (int i = 0; i < results.length; i++) {
-                    finalAnswer += Integer.toString(results[i]);
-                }
-                System.out.println("    Answer is: " + finalAnswer);
-
-                return removeLeadingZeros(new BrobInt(finalAnswer));
+               c[i] = b[i];
             }
+         }
+      } else if( a.length > b.length ) {
+         for( int i = j; i < a.length; i++ ) {
+            if( borrow ) {
+               c[i] = (byte)((int)a[j] + 1);
+               if( c[i] > 9 ) {
+                  borrow = true;
+                  c[i] = (byte)((int)c[i] - 10);
+               } else {
+                  borrow = false;
+               }
+            } else {
+               c[i] = a[i];
+            }
+         }
+      }
 
-        } else {
-            throw new IllegalArgumentException("cannot perform calculation of " + this + "  -  " + bint);
-        }
+     // build and return the result string; note, the sign gets handled here
+      result = new StringBuffer();
+      for( int i = 0; i < Math.max(a.length, b.length); i++ ) {
+         result = result.append( (int)c[i] );
+      }
 
-    }
+      if( borrow ) {
+         result = result.append( '1' );
+      }
 
+      if( negative ) {
+         result = result.append( "-" );
+      }
+
+      result_s = new String( result.reverse() );
+      if( (result_s.charAt( 0 ) == '0') && ( !(1 == result_s.length()) ) ) {
+         result_s = result_s.substring( 1, result_s.length() );
+      }
+      return new BrobInt( result_s );
+   }
+
+  /**
+   *  compareTo method
+   */
     public int compareTo(BrobInt bint) {
 
         // remove any leading zeros because we will compare lengths
@@ -321,7 +351,7 @@ public class BrobInt {
         if (-1 == sign && 1 == bint.sign) {
             return -1;
 
-            // if "this" is pos and "bint" is neg, "this" is larger so return +1
+        // if "this" is pos and "bint" is neg, "this" is larger so return +1
         } else if (1 == sign && -1 == bint.sign) {
             return 1;
         }
@@ -356,6 +386,9 @@ public class BrobInt {
         return 0; // if it gets here, just assume equality to fool the compiler
     }
 
+  /**
+   *  removeLeadingZeros method
+   */
     public BrobInt removeLeadingZeros(BrobInt bint) {
         Character sign = null;
         String returnString = bint.toString();
@@ -383,6 +416,9 @@ public class BrobInt {
 
     }
 
+  /**
+   *  allZeroDetect method
+   */
     public boolean allZeroDetect(BrobInt bint) {
         for (int i = 0; i < bint.toString().length(); i++) {
             if (bint.toString().charAt(i) != '0') {
@@ -392,190 +428,9 @@ public class BrobInt {
         return true;
     }
 
-    /*
-     * public BrobInt subtract(BrobInt value) {
-     * 
-     * System.out.println("\n   input numbers to add: this: " + this.toString() +
-     * " and value: " + value.toString()); // checks whether each term is a 0 and
-     * how that affects subtraction based on // positive/negative #. if
-     * (this.equals(BrobInt.ZERO)) { if (value.sign < 0) { this.add(value); return
-     * this; } else { value.multiply(negOne); return value; } } if
-     * (value.equals(BrobInt.ZERO)) {
-     * 
-     * return this; } // Checks if second term to be subtracted is a negative # if
-     * (value.sign < 0) { this.add(value); return this; } // Checks if you subtract
-     * a number by itself if (value.equals(this)) { return ZERO; }
-     * 
-     * int carry = 0; String answer = "";
-     * 
-     * // Checks if first number to be subtracted from is a negative number
-     * 
-     * if (this.sign < 0) { BrobInt calculation1 = value.multiply(negOne);
-     * 
-     * calculation1 = this.add(calculation1);
-     * 
-     * return calculation1; }
-     * 
-     * // Subtraction between two positive numbers based on length
-     * 
-     * // if the first number is larger than the second (in length) if
-     * (this.chunks.length > value.chunks.length) { int[] results = new
-     * int[this.chunks.length - 1]; for (int i = 0; i < this.chunks.length - 1; i++)
-     * {
-     * 
-     * if (value.chunks.length - 1 - i > -1) {
-     * 
-     * if (this.chunks[this.chunks.length - 1 - i] >=
-     * value.chunks[value.chunks.length - 1 - i]) { int calculation =
-     * this.chunks[this.chunks.length - 1 - i] - value.chunks[value.chunks.length -
-     * 1 - i]; results[results.length - 1 - i] = calculation; } else {
-     * this.chunks[this.chunks.length - 1 - i] += 10;
-     * 
-     * int calculation2 = this.chunks[this.chunks.length - 1 - i] -
-     * value.chunks[value.chunks.length - 1 - i]; results[results.length - 1 - i] =
-     * calculation2; this.chunks[this.chunks.length - 2 - i] -= 1;
-     * 
-     * }
-     * 
-     * } else {
-     * 
-     * results[results.length - 1 - i] = this.chunks[this.chunks.length - 1 - i];
-     * 
-     * }
-     * 
-     * } for (int k = 0; k < results.length - 1; k++) { answer +=
-     * Integer.toString(results[k]);
-     * 
-     * } System.out.println("    Answer is: " + answer);
-     * 
-     * BrobInt calculation = new BrobInt(answer);
-     * 
-     * BrobInt finalAnswer = calculation.multiply(negOne);
-     * 
-     * return calculation;
-     * 
-     * } // if the second number is larger than the first number (in length) else if
-     * (this.chunks.length < value.chunks.length) { int[] results = new
-     * int[value.chunks.length - 1]; for (int i = 0; i < value.chunks.length - 1;
-     * i++) { if (this.chunks.length - 1 - i > -1) { if
-     * (value.chunks[this.chunks.length - 1 - i] >= this.chunks[value.chunks.length
-     * - 1 - i]) { int calculation3 = value.chunks[value.chunks.length - 1 - i] -
-     * this.chunks[this.chunks.length - 1 - i]; results[results.length - 1 - i] =
-     * calculation3;
-     * 
-     * } else { value.chunks[value.chunks.length - 1 - i] += 10; int calculation4 =
-     * value.chunks[value.chunks.length - 1 - i] - this.chunks[this.chunks.length -
-     * 1 - i]; value.chunks[this.chunks.length - 2 - i] -= 1; } } else {
-     * results[results.length - 1 - i] = value.chunks[value.chunks.length - 1 - i];
-     * }
-     * 
-     * } for (int k = 0; k < results.length - 1; k++) { answer +=
-     * Integer.toString(results[k]);
-     * 
-     * } System.out.println("    Answer is: -" + answer);
-     * 
-     * BrobInt calculation = new BrobInt(answer);
-     * 
-     * BrobInt finalAnswer = calculation.multiply(negOne);
-     * 
-     * return finalAnswer;
-     * 
-     * } // For numbers of same length else if (this.chunks.length ==
-     * value.chunks.length) { int[] results = new int[this.chunks.length - 1]; // if
-     * the first number is larger than the second one if (this.chunks[0] >
-     * value.chunks[0]) { for (int i = 0; i < value.chunks.length - 1; i++) {
-     * 
-     * if (this.chunks[this.chunks.length - 1 - i] >=
-     * value.chunks[value.chunks.length - 1 - i]) { int calculation =
-     * this.chunks[this.chunks.length - 1 - i] - value.chunks[value.chunks.length -
-     * 1 - i]; results[results.length - 1 - i] = calculation; } else {
-     * this.chunks[this.chunks.length - 1 - i] += 10; int calculation2 =
-     * this.chunks[this.chunks.length - 1 - i] - value.chunks[value.chunks.length -
-     * 1 - i]; this.chunks[this.chunks.length - 2 - i] -= 1; results[results.length
-     * - 1 - i] = calculation2;
-     * 
-     * }
-     * 
-     * } for (int k = 0; k < results.length - 1; k++) { answer +=
-     * Integer.toString(results[k]);
-     * 
-     * } System.out.println("Answer is: " + answer);
-     * 
-     * BrobInt finalAnswer = new BrobInt(answer);
-     * 
-     * return finalAnswer;
-     * 
-     * // if the second number is larger than the first } else if (this.chunks[0] <
-     * value.chunks[0]) { for (int i = 0; i < this.chunks.length; i++) {
-     * 
-     * if (value.chunks[value.chunks.length - 1 - i] >=
-     * this.chunks[this.chunks.length - 1 - i]) { int calculation3 =
-     * value.chunks[value.chunks.length - 1 - i] - this.chunks[this.chunks.length -
-     * 1 - i]; results[results.length - 1 - i] = calculation3; } else {
-     * value.chunks[value.chunks.length - 1 - i] += 10; int calculation4 =
-     * value.chunks[value.chunks.length - 1 - i] - this.chunks[this.chunks.length -
-     * 1 - i]; value.chunks[value.chunks.length - 2 - i] -= 1;
-     * results[results.length - 1 - i] = calculation4; }
-     * 
-     * } for (int k = 0; k < results.length - 1; k++) { answer +=
-     * Integer.toString(results[k]);
-     * 
-     * }
-     * 
-     * System.out.println("Answer is: -" + answer); BrobInt calculation = new
-     * BrobInt(answer); BrobInt finalAnswer = calculation.multiply(negOne);
-     * 
-     * return finalAnswer;
-     * 
-     * // if the numbers both start with the same index } else { BrobInt bigInteger
-     * = ZERO; BrobInt smallInteger = ZERO; for (int i = 1; i < value.chunks.length
-     * - 1; i++) { if (this.chunks[i] > value.chunks[i]) { bigInteger =
-     * this.add(ZERO); smallInteger = value.add(ZERO); break;
-     * 
-     * } else if (value.chunks[i] > this.chunks[i]) { bigInteger = value.add(ZERO);
-     * smallInteger = this.add(ZERO); break; } } // if the second number is the
-     * larger number if (value.equals(bigInteger)) { for (int i = 0; i <
-     * value.chunks.length - 1; i++) { if (value.chunks[value.chunks.length - 1 - i]
-     * >= this.chunks[this.chunks.length - 1 - i]) { int calculation6 =
-     * value.chunks[value.chunks.length - 1 - i] - this.chunks[this.chunks.length -
-     * 1 - i]; results[results.length - 1 - i] = calculation6;
-     * 
-     * } else { value.chunks[value.chunks.length - 1 - i] += 10; int calculation7 =
-     * value.chunks[value.chunks.length - 1 - i] - this.chunks[this.chunks.length -
-     * 1 - i]; results[results.length - 1 - i] = calculation7;
-     * value.chunks[value.chunks.length - 2 - i] -= 1;
-     * 
-     * }
-     * 
-     * } for (int k = 0; k < results.length - 1; k++) { answer +=
-     * Integer.toString(results[k]);
-     * 
-     * } System.out.println("Your answer is: -" + answer); BrobInt estimation = new
-     * BrobInt(answer); BrobInt finalAnswer = estimation.multiply(negOne);
-     * 
-     * return finalAnswer;
-     * 
-     * } if (this.equals(bigInteger)) { for (int i = 0; i < value.chunks.length - 1;
-     * i++) { if (this.chunks[this.chunks.length - 1 - i] >=
-     * value.chunks[value.chunks.length - 1 - i]) { int calculation8 =
-     * this.chunks[this.chunks.length - 1 - i] - value.chunks[value.chunks.length -
-     * 1 - i]; results[results.length - 1 - i] = calculation8; } else {
-     * this.chunks[this.chunks.length - 1 - i] += 10; int calculation7 =
-     * this.chunks[this.chunks.length - 1 - i] - value.chunks[value.chunks.length -
-     * 1 - i]; results[results.length - 1 - i] = calculation7;
-     * this.chunks[this.chunks.length - 2 - i] -= 1;
-     * 
-     * } } for (int k = 0; k < results.length - 1; k++) { answer +=
-     * Integer.toString(results[k]);
-     * 
-     * } System.out.println("Your answer is: -" + answer); BrobInt estimation = new
-     * BrobInt(answer); BrobInt finalAnswer = estimation.multiply(negOne);
-     * 
-     * return finalAnswer; } } }
-     * 
-     * }
-     */
-
+  /**
+   *  multiply method
+   */
     public BrobInt multiply(BrobInt value) {
 
         BrobInt calculation = new BrobInt("answer");
@@ -584,6 +439,9 @@ public class BrobInt {
 
     }
 
+  /**
+   *  divide method
+   */
     public BrobInt divide(BrobInt value) {
 
         BrobInt calculation = new BrobInt("answer");
@@ -592,6 +450,9 @@ public class BrobInt {
 
     }
 
+  /**
+   *  remainder method
+   */
     public BrobInt remainder(BrobInt value) {
 
         BrobInt calculation = new BrobInt("answer");
@@ -600,6 +461,9 @@ public class BrobInt {
 
     }
 
+  /**
+   *  toString method
+   */
     public String toString() {
 
         String n = sign >= 0 ? "" : "-";
@@ -612,10 +476,16 @@ public class BrobInt {
 
     }
 
+  /**
+   *  equals method
+   */
     public boolean equals(BrobInt bint) {
         return ((sign == bint.sign) && (this.toString().equals(bint.toString())));
     }
 
+  /**
+   *  valueOf method
+   */
     public static BrobInt valueOf(long value) {
 
         BrobInt calculation = new BrobInt("answer");
@@ -624,15 +494,60 @@ public class BrobInt {
 
     }
 
+  /**
+   *  main method
+   */
     public static void main(String[] arguments) {
 
-        System.out.println("\n\n  Making new BrobInt for " + arguments[0]);
+        System.out.println("\n\n  In Main: Making new BrobInt for " + arguments[0]);
         BrobInt box1 = new BrobInt(arguments[0]);
-        System.out.println("\n\n  Making new BrobInt for " + arguments[1]);
+        System.out.println("  In Main: Making new BrobInt for " + arguments[1]);
         BrobInt box2 = new BrobInt(arguments[1]);
-        System.out.println("\n\n  Subtracting box1 and box2.... ");
-        BrobInt box3 = box1.subtract(box2);
-        System.out.println("\n    Your answer is: " + box3.toString());
+        System.out.println("  In Main: Adding box1: " + box1.toString() + " and box2: " + box2.toString() + ".... ");
+        BrobInt box3 = box1.add(box2);
+        System.out.println("  In Main: Your answer is: " + box3.toString() + "\n" );
+
+        box1 = new BrobInt( "-" + arguments[0] );
+        box2 = new BrobInt( "-" + arguments[1] );
+        System.out.println("  In Main: Adding box1: " + box1.toString() + " and box2: " + box2.toString() + ".... ");
+        box3 = box1.add(box2);
+        System.out.println("  In Main: Your answer is: " + box3.toString() + "\n" );
+
+        box1 = new BrobInt( arguments[0] );
+        box2 = new BrobInt( "-" + arguments[1] );
+        System.out.println("  In Main: Adding box1: " + box1.toString() + " and box2: " + box2.toString() + ".... ");
+        box3 = box1.add(box2);
+        System.out.println("  In Main: Your answer is: " + box3.toString() + "\n" );
+
+        box1 = new BrobInt( "-" + arguments[0] );
+        box2 = new BrobInt( arguments[1] );
+        System.out.println("  In Main: Adding box1: " + box1.toString() + " and box2: " + box2.toString() + ".... ");
+        box3 = box1.add(box2);
+        System.out.println("  In Main: Your answer is: " + box3.toString() + "\n" );
+
+        box1 = new BrobInt( arguments[0] );
+        box2 = new BrobInt( arguments[1] );
+        System.out.println("  In Main: Subtracting box1: " + box1.toString() + " and box2: " + box2.toString() + ".... ");
+        box3 = box1.subtract(box2);
+        System.out.println("  In Main: Your answer is: " + box3.toString() + "\n" );
+
+        box1 = new BrobInt( arguments[0] );
+        box2 = new BrobInt( "-" + arguments[1] );
+        System.out.println("  In Main: Subtracting box1: " + box1.toString() + " and box2: " + box2.toString() + ".... ");
+        box3 = box1.subtract(box2);
+        System.out.println("  In Main: Your answer is: " + box3.toString() + "\n" );
+
+        box1 = new BrobInt( "-" + arguments[0] );
+        box2 = new BrobInt( arguments[1] );
+        System.out.println("  In Main: Subtracting box1: " + box1.toString() + " and box2: " + box2.toString() + ".... ");
+        box3 = box1.subtract(box2);
+        System.out.println("  In Main: Your answer is: " + box3.toString() + "\n" );
+
+        box1 = new BrobInt( "-" + arguments[0] );
+        box2 = new BrobInt( "-" + arguments[1] );
+        System.out.println("  In Main: Subtracting box1: " + box1.toString() + " and box2: " + box2.toString() + ".... ");
+        box3 = box1.subtract(box2);
+        System.out.println("  In Main: Your answer is: " + box3.toString() + "\n" );
 
     }
 }
