@@ -1,0 +1,90 @@
+Setting your first input (10) as the number of people being sampled.
+Number of people: 10
+Setting your second input (100) as the number of trials
+Number of trials: 100
+Your actual probability is: 11.694817771107768%
+Your approximated probability is: 0.0%
+Setting your first input (10) as the number of people being sampled.
+Number of people: 10
+Setting your second input (300) as the number of trials
+Number of trials: 300
+Your actual probability is: 11.694817771107768%
+Your approximated probability is: 0.0%
+Setting your first input (10) as the number of people being sampled.
+Number of people: 10
+Setting your second input (300) as the number of trials
+Number of trials: 300
+Your actual probability is: 11.694817771107768%
+Your approximated probability is: 0.0%
+Setting your first input (88) as the number of people being sampled.
+Number of people: 88
+Setting your second input (300) as the number of trials
+Number of trials: 300
+Your actual probability is: 99.99892801659155%
+Your approximated probability is: 100.0%
+Setting your first input (85) as the number of people being sampled.
+Number of people: 85
+Setting your second input (10) as the number of trials
+Number of trials: 10
+Your actual probability is: 99.99759973260097%
+Your approximated probability is: 100.0%
+Setting your first input (8) as the number of people being sampled.
+Number of people: 8
+Setting your second input (10) as the number of trials
+Number of trials: 10
+Your actual probability is: 7.433529235166903%
+Your approximated probability is: 0.0%
+Setting your first input (80) as the number of people being sampled.
+Number of people: 80
+Setting your second input (10) as the number of trials
+Number of trials: 10
+Your actual probability is: 99.99143319493135%
+Your approximated probability is: 100.0%
+Setting your first input (80) as the number of people being sampled.
+Number of people: 80
+Setting your second input (100) as the number of trials
+Number of trials: 100
+Your actual probability is: 99.99143319493135%
+Your approximated probability is: 100.0%
+Setting your first input (9) as the number of people being sampled.
+Number of people: 9
+Setting your second input (100) as the number of trials
+Number of trials: 100
+Your actual probability is: 9.462383388916674%
+Your approximated probability is: 0.0%
+Setting your first input (9) as the number of people being sampled.
+Number of people: 9
+Setting your second input (100) as the number of trials
+Number of trials: 100
+Your actual probability is: 9.462383388916674%
+Your approximated probability is: 0.0%
+Setting your first input (9) as the number of people being sampled.
+Number of people: 9
+Setting your second input (100) as the number of trials
+Number of trials: 100
+Your actual probability is: 9.462383388916674%
+Your approximated probability is: 0.0%
+Setting your first input (90) as the number of people being sampled.
+Number of people: 90
+Setting your second input (100) as the number of trials
+Number of trials: 100
+Your actual probability is: 99.99938483561236%
+Your approximated probability is: 100.0%
+Setting your first input (900) as the number of people being sampled.
+Number of people: 900
+Setting your second input (10) as the number of trials
+Number of trials: 10
+Your actual probability is: 100.0%
+Your approximated probability is: 100.0%
+Setting your first input (7) as the number of people being sampled.
+Number of people: 7
+Setting your second input (100) as the number of trials
+Number of trials: 100
+Your actual probability is: 5.623570309597536%
+Your approximated probability is: 0.0%
+Setting your first input (7) as the number of people being sampled.
+Number of people: 7
+Setting your second input (100) as the number of trials
+Number of trials: 100
+Your actual probability is: 5.623570309597536%
+Your approximated probability is: 0.0%
