@@ -4,6 +4,7 @@ public class BrobInt {
 
    public static final BrobInt ZERO = new BrobInt("0");
    public static final BrobInt ONE = new BrobInt("1");
+   public static final BrobInt TWO = new BrobInt("2");
    public static final BrobInt TEN = new BrobInt("10");
    public static final BrobInt NEGONE = new BrobInt("-1");
 
@@ -679,38 +680,38 @@ public class BrobInt {
        * " and box2: " + box2.toString() + ".... "); BrobInt box3 = box1.add(box2);
        *//*
           * System.out.println("  In Main: Your answer is: " + box3.toString() + "\n");
-          * 
+          *
           * box1 = new BrobInt("-" + arguments[0]); box2 = new BrobInt("-" +
           * arguments[1]); System.out.println("  In Main: Adding box1: " +
           * box1.toString() + " and box2: " + box2.toString() + ".... "); box3 =
           * box1.add(box2); System.out.println("  In Main: Your answer is: " +
           * box3.toString() + "\n");
-          * 
+          *
           * box1 = new BrobInt(arguments[0]); box2 = new BrobInt("-" + arguments[1]);
           * System.out.println("  In Main: Adding box1: " + box1.toString() +
           * " and box2: " + box2.toString() + ".... "); box3 = box1.add(box2);
           * System.out.println("  In Main: Your answer is: " + box3.toString() + "\n");
-          * 
+          *
           * box1 = new BrobInt("-" + arguments[0]); box2 = new BrobInt(arguments[1]);
           * System.out.println("  In Main: Adding box1: " + box1.toString() +
           * " and box2: " + box2.toString() + ".... "); box3 = box1.add(box2);
           * System.out.println("  In Main: Your answer is: " + box3.toString() + "\n");
-          * 
+          *
           * box1 = new BrobInt(arguments[0]); box2 = new BrobInt(arguments[1]);
           * System.out.println("  In Main: Subtracting box1: " + box1.toString() +
           * " and box2: " + box2.toString() + ".... "); box3 = box1.subtract(box2);
           * System.out.println("  In Main: Your answer is: " + box3.toString() + "\n");
-          * 
+          *
           * box1 = new BrobInt(arguments[0]); box2 = new BrobInt("-" + arguments[1]);
           * System.out.println("  In Main: Subtracting box1: " + box1.toString() +
           * " and box2: " + box2.toString() + ".... "); box3 = box1.subtract(box2);
           * System.out.println("  In Main: Your answer is: " + box3.toString() + "\n");
-          * 
+          *
           * box1 = new BrobInt("-" + arguments[0]); box2 = new BrobInt(arguments[1]);
           * System.out.println("  In Main: Subtracting box1: " + box1.toString() +
           * " and box2: " + box2.toString() + ".... "); box3 = box1.subtract(box2);
           * System.out.println("  In Main: Your answer is: " + box3.toString() + "\n");
-          * 
+          *
           * box1 = new BrobInt("-" + arguments[0]); box2 = new BrobInt("-" +
           * arguments[1]); System.out.println("  In Main: Subtracting box1: " +
           * box1.toString() + " and box2: " + box2.toString() + ".... "); box3 =
@@ -722,7 +723,7 @@ public class BrobInt {
        * System.out.println("  In Main: Multiplying box1: " + box1.toString() +
        * " and box2: " + box2.toString() + ".... "); box3 = box1.multiply(box2);
        * System.out.println("  In Main: Your answer is: " + box3.toString() + "\n");
-       * 
+       *
        * box1 = new BrobInt(arguments[0]); box2 = new BrobInt(arguments[1]);
        * System.out.println("  In Main: DIVIDING box1: " + box1.toString() +
        * " and box2: " + box2.toString() + ".... "); box3 = box1.divide(box2);

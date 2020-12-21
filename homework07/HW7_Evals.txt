@@ -1,0 +1,76 @@
+
+Evaluation for homework 07: BirthdaySolver.java
+
+BirthdaySolver class file requirements
+   template file, provided with javadoc already done
+   you must handle input from the command line
+   you must handle an optional argument for # experiments
+   you must provide user feedback for lengthy computation
+   you must check for errors in the input arguments
+   you must output two numbers: actual vs. estimated
+   you must have a test harness with at least 20 tests
+   you must output the results to a "testresults.txt" file
+   you must write a paragraph analyzing your observations
+
+==========================================================
+
+Class BirthdaySolver
+BirthdaySolver.java                 1.00/ 1.00
+BirthdaySolver compiles             1.00/ 1.00
+constructor() [gimme]               1.00/ 1.00
+handleInput() [2 pts]               1.00/ 2.00
+calculation [5 pts]                 5.00/ 5.00
+estimation [5 pts]                  5.00/ 5.00
+"run so far" code                   0.00/ 1.00
+test harness exists                 1.00/ 1.00
+20 tests [20 pts]                  20.00/20.00
+javadocs                            1.00/ 1.00
+testresults.txt file                1.00/ 1.00
+research report                     1.00/ 1.00
+minimum 4 files in repo             4.00/ 4.00
+coding style                        1.00/ 1.00
+
+
+Total possible score: 45 points
+
+Your score:  43 of 45 = 95.56% which is an A
+
+Evaluation
+==========
+Not bad on this, Jake!  I notice a couple of things.  First of all you don't
+handle the case in which there is only one argument and default to the value
+of 100,000 experiments as was required.  Secondly, and perhaps more critical
+is the approximated probability values that you get.  They all seem to come
+out with either 0.0% or 100.0%.  Looking at your code, I think this is due
+to the calculation on line 128:
+
+      double calculation = (counter / trials) * 100;
+
+In this calculation, you are declaring a double-precision value to hold the
+estimation, but the "counter" and "trials" variables are of type int.  This
+makes the division come out hinky.  On the one hand, if the counter value is
+LESS THAN the number of trials, you'll come out with a number that is less
+than one, and the fact that it is integer division will truncate the part
+that is fractional, give you a zero.  Then of course, zero times 100 is still
+zero.
+
+On the other hand, if the value of count is GREATER than the value of trials,
+you'll get a value that is greater than one, the fractional part will be
+truncated, and you'll end up with 100% or even 200% or more.  For example,
+if count works out to be 300 and there are 100 trials, you'd get 300%!!
+
+The fix for this, of course, is to "cast" the two variables to doubles so
+that the precision is maintained:
+
+      double calculation = ((double)counter / (double)trials) * 100.0;
+
+This will preserve the precision of the division and give you the answer for
+which you are looking.
+
+Excellent write-up of your experience ~ I like your conclusion and the way
+you went about thinking through the problem.
+
+Javadoc runs clean, no errors or warnings, so you're good there.
+
+Nice work, Jake, and a great ending to the semester!
+

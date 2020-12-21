@@ -84,15 +84,36 @@ Total possible score: 80 points
 
 Evaluation
 ==========
-   your score is 80.00 out of 80.00 = 100.00% which is an A-plus
-   you also got   0.00 extra credit points
-    total score: 80.00 out of 80.00 = 100.00% which is an A-plus
+   your score is 71.00 out of 80.00 = 91.03% which is an A-minus
+   you also got  10.00 extra credit points
+    total score: 81.00 out of 80.00 = 103.85% which is an A-plus
 
 DETAILED COMMENTS:
 ==================
+Nice work Jake!  You have worked **REALLY** hard on this and your persistence
+is laudable and impressive!
 
+I see you have a bunch of tests in the BrobInt file, of which you left only
+one uncommented.  But due to your hard work, you earn credit for them all.
 
+I notice that when running the BrobIntTester you still have a couple of your
+debugging output lines in there, so the output listing gets rather lengthy...
 
-Nice work!
+:D
+
+I can tell though, that it looks like you are using a loop variable and you
+count it *UP* until [hopefully] it reaches the value of the divisor.  However
+for at least some of them, you are getting the right answer, although with
+the wrong sign...
+
+Sorting through all that output is not so much fun, so remember to take the
+extra println statements out before submitting next time, OK?
+
+....please?    :D
+
+Since there's no Neptune, you don't earn any points for that part, but the
+EC for the BrobInt tests makes up for most of that.
+
+Nice work, Jake!!
 
 
